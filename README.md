@@ -1,6 +1,6 @@
 # KrishiSense AI — Explainable Smart Crop Advisory & Farm Intelligence Platform
 
-An intelligent agricultural decision-support platform for Indian farmers, students and researchers. Based on the **SIH25010** Smart Crop Advisory problem statement and built as a substantially redesigned successor of [`7H-ANKUR/CROP-ADVISORY-SIH25010`](https://github.com/7H-ANKUR/CROP-ADVISORY-SIH25010) (GPL-3.0 — datasets and knowledge bases reused with attribution).
+An intelligent agricultural decision-support platform for Indian farmers, students and researchers. Based on the **SIH25010** Smart Crop Advisory problem statement  (GPL-3.0 — datasets and knowledge bases reused with attribution).
 
 > **Core idea:** don't just tell the farmer *what* to grow — explain *why*, show *alternatives*, and let them test *what-if*.
 
