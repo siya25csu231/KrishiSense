@@ -1,0 +1,2713 @@
+{
+  "meta": {
+    "name": "India Crop Season and Pest Advisory Knowledge Base",
+    "version": "1.0",
+    "scope": "28 Indian states only",
+    "purpose": "Lookup support for crop advisory, pest advisory, and season-aware planning in a web app",
+    "important_note": "This is a curated knowledge base. Validate locally with district agriculture officers before production use.",
+    "season_definitions": {
+      "kharif": "Monsoon season crops, usually sown June-July and harvested around September-October.",
+      "rabi": "Winter season crops, usually sown October-December and harvested around March-April.",
+      "zaid": "Short summer season crops between rabi and kharif, usually March-June."
+    }
+  },
+  "season_crops": {
+    "kharif": [
+      "Rice",
+      "Maize",
+      "Cotton",
+      "Soybean",
+      "Groundnut",
+      "Pigeonpea",
+      "Pearl millet",
+      "Sorghum",
+      "Sugarcane",
+      "Jute"
+    ],
+    "rabi": [
+      "Wheat",
+      "Mustard",
+      "Chickpea",
+      "Lentil",
+      "Barley",
+      "Potato",
+      "Pea",
+      "Sunflower",
+      "Onion"
+    ],
+    "zaid": [
+      "Moong",
+      "Watermelon",
+      "Cucumber",
+      "Vegetables",
+      "Fodder",
+      "Muskmelon"
+    ]
+  },
+  "state_crop_map": {
+    "Andhra Pradesh": {
+      "kharif": [
+        {
+          "crop": "Rice",
+          "pest_profile_key": "rice"
+        },
+        {
+          "crop": "Cotton",
+          "pest_profile_key": "cotton"
+        },
+        {
+          "crop": "Maize",
+          "pest_profile_key": "maize"
+        },
+        {
+          "crop": "Groundnut",
+          "pest_profile_key": "groundnut"
+        },
+        {
+          "crop": "Pigeonpea",
+          "pest_profile_key": "pigeonpea"
+        }
+      ],
+      "rabi": [
+        {
+          "crop": "Rice",
+          "pest_profile_key": "rice",
+          "note": "Common in irrigated areas."
+        },
+        {
+          "crop": "Groundnut",
+          "pest_profile_key": "groundnut"
+        },
+        {
+          "crop": "Chickpea",
+          "pest_profile_key": "chickpea"
+        },
+        {
+          "crop": "Sunflower",
+          "pest_profile_key": "sunflower"
+        },
+        {
+          "crop": "Tobacco",
+          "pest_profile_key": "tobacco"
+        }
+      ],
+      "zaid": [
+        {
+          "crop": "Vegetables",
+          "pest_profile_key": "vegetables"
+        },
+        {
+          "crop": "Watermelon",
+          "pest_profile_key": "watermelon"
+        },
+        {
+          "crop": "Cucumber",
+          "pest_profile_key": "cucumber"
+        },
+        {
+          "crop": "Fodder",
+          "pest_profile_key": "fodder"
+        },
+        {
+          "crop": "Moong",
+          "pest_profile_key": "moong"
+        }
+      ]
+    },
+    "Arunachal Pradesh": {
+      "kharif": [
+        {
+          "crop": "Rice",
+          "pest_profile_key": "rice"
+        },
+        {
+          "crop": "Maize",
+          "pest_profile_key": "maize"
+        },
+        {
+          "crop": "Millets",
+          "pest_profile_key": "millets"
+        },
+        {
+          "crop": "Pulses",
+          "pest_profile_key": "pulses"
+        }
+      ],
+      "rabi": [
+        {
+          "crop": "Mustard",
+          "pest_profile_key": "mustard"
+        },
+        {
+          "crop": "Potato",
+          "pest_profile_key": "potato"
+        },
+        {
+          "crop": "Pea",
+          "pest_profile_key": "pea"
+        },
+        {
+          "crop": "Barley",
+          "pest_profile_key": "barley"
+        }
+      ],
+      "zaid": [
+        {
+          "crop": "Vegetables",
+          "pest_profile_key": "vegetables"
+        },
+        {
+          "crop": "Cucumber",
+          "pest_profile_key": "cucumber"
+        },
+        {
+          "crop": "Moong",
+          "pest_profile_key": "moong"
+        },
+        {
+          "crop": "Fodder",
+          "pest_profile_key": "fodder"
+        }
+      ]
+    },
+    "Assam": {
+      "kharif": [
+        {
+          "crop": "Rice",
+          "pest_profile_key": "rice"
+        },
+        {
+          "crop": "Jute",
+          "pest_profile_key": "jute"
+        },
+        {
+          "crop": "Tea",
+          "pest_profile_key": "tea"
+        },
+        {
+          "crop": "Maize",
+          "pest_profile_key": "maize"
+        },
+        {
+          "crop": "Pulses",
+          "pest_profile_key": "pulses"
+        }
+      ],
+      "rabi": [
+        {
+          "crop": "Mustard",
+          "pest_profile_key": "mustard"
+        },
+        {
+          "crop": "Potato",
+          "pest_profile_key": "potato"
+        },
+        {
+          "crop": "Pea",
+          "pest_profile_key": "pea"
+        },
+        {
+          "crop": "Lentil",
+          "pest_profile_key": "lentil"
+        }
+      ],
+      "zaid": [
+        {
+          "crop": "Vegetables",
+          "pest_profile_key": "vegetables"
+        },
+        {
+          "crop": "Watermelon",
+          "pest_profile_key": "watermelon"
+        },
+        {
+          "crop": "Moong",
+          "pest_profile_key": "moong"
+        }
+      ]
+    },
+    "Bihar": {
+      "kharif": [
+        {
+          "crop": "Rice",
+          "pest_profile_key": "rice"
+        },
+        {
+          "crop": "Maize",
+          "pest_profile_key": "maize"
+        },
+        {
+          "crop": "Jute",
+          "pest_profile_key": "jute"
+        },
+        {
+          "crop": "Pigeonpea",
+          "pest_profile_key": "pigeonpea"
+        },
+        {
+          "crop": "Moong",
+          "pest_profile_key": "moong"
+        }
+      ],
+      "rabi": [
+        {
+          "crop": "Wheat",
+          "pest_profile_key": "wheat"
+        },
+        {
+          "crop": "Mustard",
+          "pest_profile_key": "mustard"
+        },
+        {
+          "crop": "Chickpea",
+          "pest_profile_key": "chickpea"
+        },
+        {
+          "crop": "Lentil",
+          "pest_profile_key": "lentil"
+        },
+        {
+          "crop": "Barley",
+          "pest_profile_key": "barley"
+        }
+      ],
+      "zaid": [
+        {
+          "crop": "Moong",
+          "pest_profile_key": "moong"
+        },
+        {
+          "crop": "Vegetables",
+          "pest_profile_key": "vegetables"
+        },
+        {
+          "crop": "Watermelon",
+          "pest_profile_key": "watermelon"
+        },
+        {
+          "crop": "Fodder",
+          "pest_profile_key": "fodder"
+        }
+      ]
+    },
+    "Chhattisgarh": {
+      "kharif": [
+        {
+          "crop": "Rice",
+          "pest_profile_key": "rice"
+        },
+        {
+          "crop": "Maize",
+          "pest_profile_key": "maize"
+        },
+        {
+          "crop": "Soybean",
+          "pest_profile_key": "soybean"
+        },
+        {
+          "crop": "Pigeonpea",
+          "pest_profile_key": "pigeonpea"
+        },
+        {
+          "crop": "Millets",
+          "pest_profile_key": "millets"
+        }
+      ],
+      "rabi": [
+        {
+          "crop": "Wheat",
+          "pest_profile_key": "wheat"
+        },
+        {
+          "crop": "Chickpea",
+          "pest_profile_key": "chickpea"
+        },
+        {
+          "crop": "Mustard",
+          "pest_profile_key": "mustard"
+        },
+        {
+          "crop": "Lentil",
+          "pest_profile_key": "lentil"
+        }
+      ],
+      "zaid": [
+        {
+          "crop": "Moong",
+          "pest_profile_key": "moong"
+        },
+        {
+          "crop": "Vegetables",
+          "pest_profile_key": "vegetables"
+        },
+        {
+          "crop": "Watermelon",
+          "pest_profile_key": "watermelon"
+        }
+      ]
+    },
+    "Goa": {
+      "kharif": [
+        {
+          "crop": "Rice",
+          "pest_profile_key": "rice"
+        },
+        {
+          "crop": "Coconut",
+          "pest_profile_key": "coconut"
+        },
+        {
+          "crop": "Cashew",
+          "pest_profile_key": "cashew"
+        },
+        {
+          "crop": "Groundnut",
+          "pest_profile_key": "groundnut"
+        }
+      ],
+      "rabi": [
+        {
+          "crop": "Vegetables",
+          "pest_profile_key": "vegetables"
+        },
+        {
+          "crop": "Pulses",
+          "pest_profile_key": "pulses"
+        },
+        {
+          "crop": "Potato",
+          "pest_profile_key": "potato"
+        }
+      ],
+      "zaid": [
+        {
+          "crop": "Watermelon",
+          "pest_profile_key": "watermelon"
+        },
+        {
+          "crop": "Cucumber",
+          "pest_profile_key": "cucumber"
+        },
+        {
+          "crop": "Fodder",
+          "pest_profile_key": "fodder"
+        }
+      ]
+    },
+    "Gujarat": {
+      "kharif": [
+        {
+          "crop": "Cotton",
+          "pest_profile_key": "cotton"
+        },
+        {
+          "crop": "Groundnut",
+          "pest_profile_key": "groundnut"
+        },
+        {
+          "crop": "Pearl millet",
+          "pest_profile_key": "pearl_millet"
+        },
+        {
+          "crop": "Soybean",
+          "pest_profile_key": "soybean"
+        },
+        {
+          "crop": "Sesame",
+          "pest_profile_key": "sesame"
+        }
+      ],
+      "rabi": [
+        {
+          "crop": "Wheat",
+          "pest_profile_key": "wheat"
+        },
+        {
+          "crop": "Mustard",
+          "pest_profile_key": "mustard"
+        },
+        {
+          "crop": "Chickpea",
+          "pest_profile_key": "chickpea"
+        },
+        {
+          "crop": "Cumin",
+          "pest_profile_key": "cumin"
+        },
+        {
+          "crop": "Potato",
+          "pest_profile_key": "potato"
+        }
+      ],
+      "zaid": [
+        {
+          "crop": "Watermelon",
+          "pest_profile_key": "watermelon"
+        },
+        {
+          "crop": "Cucumber",
+          "pest_profile_key": "cucumber"
+        },
+        {
+          "crop": "Fodder",
+          "pest_profile_key": "fodder"
+        },
+        {
+          "crop": "Moong",
+          "pest_profile_key": "moong"
+        }
+      ]
+    },
+    "Haryana": {
+      "kharif": [
+        {
+          "crop": "Rice",
+          "pest_profile_key": "rice"
+        },
+        {
+          "crop": "Cotton",
+          "pest_profile_key": "cotton"
+        },
+        {
+          "crop": "Maize",
+          "pest_profile_key": "maize"
+        },
+        {
+          "crop": "Sugarcane",
+          "pest_profile_key": "sugarcane"
+        },
+        {
+          "crop": "Pearl millet",
+          "pest_profile_key": "pearl_millet"
+        }
+      ],
+      "rabi": [
+        {
+          "crop": "Wheat",
+          "pest_profile_key": "wheat"
+        },
+        {
+          "crop": "Mustard",
+          "pest_profile_key": "mustard"
+        },
+        {
+          "crop": "Barley",
+          "pest_profile_key": "barley"
+        },
+        {
+          "crop": "Chickpea",
+          "pest_profile_key": "chickpea"
+        },
+        {
+          "crop": "Pea",
+          "pest_profile_key": "pea"
+        }
+      ],
+      "zaid": [
+        {
+          "crop": "Fodder",
+          "pest_profile_key": "fodder"
+        },
+        {
+          "crop": "Vegetables",
+          "pest_profile_key": "vegetables"
+        },
+        {
+          "crop": "Cucumber",
+          "pest_profile_key": "cucumber"
+        }
+      ]
+    },
+    "Himachal Pradesh": {
+      "kharif": [
+        {
+          "crop": "Maize",
+          "pest_profile_key": "maize"
+        },
+        {
+          "crop": "Rice",
+          "pest_profile_key": "rice"
+        },
+        {
+          "crop": "Potato",
+          "pest_profile_key": "potato"
+        },
+        {
+          "crop": "Rajma",
+          "pest_profile_key": "rajma"
+        }
+      ],
+      "rabi": [
+        {
+          "crop": "Wheat",
+          "pest_profile_key": "wheat"
+        },
+        {
+          "crop": "Barley",
+          "pest_profile_key": "barley"
+        },
+        {
+          "crop": "Mustard",
+          "pest_profile_key": "mustard"
+        },
+        {
+          "crop": "Pea",
+          "pest_profile_key": "pea"
+        },
+        {
+          "crop": "Lentil",
+          "pest_profile_key": "lentil"
+        }
+      ],
+      "zaid": [
+        {
+          "crop": "Vegetables",
+          "pest_profile_key": "vegetables"
+        },
+        {
+          "crop": "Cucumber",
+          "pest_profile_key": "cucumber"
+        },
+        {
+          "crop": "Fodder",
+          "pest_profile_key": "fodder"
+        }
+      ]
+    },
+    "Jharkhand": {
+      "kharif": [
+        {
+          "crop": "Rice",
+          "pest_profile_key": "rice"
+        },
+        {
+          "crop": "Maize",
+          "pest_profile_key": "maize"
+        },
+        {
+          "crop": "Pigeonpea",
+          "pest_profile_key": "pigeonpea"
+        },
+        {
+          "crop": "Groundnut",
+          "pest_profile_key": "groundnut"
+        },
+        {
+          "crop": "Millets",
+          "pest_profile_key": "millets"
+        }
+      ],
+      "rabi": [
+        {
+          "crop": "Wheat",
+          "pest_profile_key": "wheat"
+        },
+        {
+          "crop": "Chickpea",
+          "pest_profile_key": "chickpea"
+        },
+        {
+          "crop": "Mustard",
+          "pest_profile_key": "mustard"
+        },
+        {
+          "crop": "Lentil",
+          "pest_profile_key": "lentil"
+        }
+      ],
+      "zaid": [
+        {
+          "crop": "Vegetables",
+          "pest_profile_key": "vegetables"
+        },
+        {
+          "crop": "Moong",
+          "pest_profile_key": "moong"
+        },
+        {
+          "crop": "Watermelon",
+          "pest_profile_key": "watermelon"
+        }
+      ]
+    },
+    "Karnataka": {
+      "kharif": [
+        {
+          "crop": "Rice",
+          "pest_profile_key": "rice"
+        },
+        {
+          "crop": "Maize",
+          "pest_profile_key": "maize"
+        },
+        {
+          "crop": "Cotton",
+          "pest_profile_key": "cotton"
+        },
+        {
+          "crop": "Groundnut",
+          "pest_profile_key": "groundnut"
+        },
+        {
+          "crop": "Ragi",
+          "pest_profile_key": "ragi"
+        },
+        {
+          "crop": "Sugarcane",
+          "pest_profile_key": "sugarcane"
+        }
+      ],
+      "rabi": [
+        {
+          "crop": "Wheat",
+          "pest_profile_key": "wheat"
+        },
+        {
+          "crop": "Chickpea",
+          "pest_profile_key": "chickpea"
+        },
+        {
+          "crop": "Sunflower",
+          "pest_profile_key": "sunflower"
+        },
+        {
+          "crop": "Sorghum",
+          "pest_profile_key": "sorghum"
+        },
+        {
+          "crop": "Onion",
+          "pest_profile_key": "onion"
+        }
+      ],
+      "zaid": [
+        {
+          "crop": "Watermelon",
+          "pest_profile_key": "watermelon"
+        },
+        {
+          "crop": "Cucumber",
+          "pest_profile_key": "cucumber"
+        },
+        {
+          "crop": "Vegetables",
+          "pest_profile_key": "vegetables"
+        }
+      ]
+    },
+    "Kerala": {
+      "kharif": [
+        {
+          "crop": "Rice",
+          "pest_profile_key": "rice"
+        },
+        {
+          "crop": "Coconut",
+          "pest_profile_key": "coconut"
+        },
+        {
+          "crop": "Banana",
+          "pest_profile_key": "banana"
+        },
+        {
+          "crop": "Rubber",
+          "pest_profile_key": "rubber"
+        },
+        {
+          "crop": "Spices",
+          "pest_profile_key": "spices"
+        }
+      ],
+      "rabi": [
+        {
+          "crop": "Rice",
+          "pest_profile_key": "rice"
+        },
+        {
+          "crop": "Vegetables",
+          "pest_profile_key": "vegetables"
+        },
+        {
+          "crop": "Pulses",
+          "pest_profile_key": "pulses"
+        },
+        {
+          "crop": "Banana",
+          "pest_profile_key": "banana"
+        }
+      ],
+      "zaid": [
+        {
+          "crop": "Vegetables",
+          "pest_profile_key": "vegetables"
+        },
+        {
+          "crop": "Cucumber",
+          "pest_profile_key": "cucumber"
+        },
+        {
+          "crop": "Watermelon",
+          "pest_profile_key": "watermelon"
+        }
+      ]
+    },
+    "Madhya Pradesh": {
+      "kharif": [
+        {
+          "crop": "Soybean",
+          "pest_profile_key": "soybean"
+        },
+        {
+          "crop": "Maize",
+          "pest_profile_key": "maize"
+        },
+        {
+          "crop": "Cotton",
+          "pest_profile_key": "cotton"
+        },
+        {
+          "crop": "Rice",
+          "pest_profile_key": "rice"
+        },
+        {
+          "crop": "Pigeonpea",
+          "pest_profile_key": "pigeonpea"
+        }
+      ],
+      "rabi": [
+        {
+          "crop": "Wheat",
+          "pest_profile_key": "wheat"
+        },
+        {
+          "crop": "Chickpea",
+          "pest_profile_key": "chickpea"
+        },
+        {
+          "crop": "Mustard",
+          "pest_profile_key": "mustard"
+        },
+        {
+          "crop": "Lentil",
+          "pest_profile_key": "lentil"
+        },
+        {
+          "crop": "Sunflower",
+          "pest_profile_key": "sunflower"
+        }
+      ],
+      "zaid": [
+        {
+          "crop": "Moong",
+          "pest_profile_key": "moong"
+        },
+        {
+          "crop": "Fodder",
+          "pest_profile_key": "fodder"
+        },
+        {
+          "crop": "Vegetables",
+          "pest_profile_key": "vegetables"
+        }
+      ]
+    },
+    "Maharashtra": {
+      "kharif": [
+        {
+          "crop": "Cotton",
+          "pest_profile_key": "cotton"
+        },
+        {
+          "crop": "Soybean",
+          "pest_profile_key": "soybean"
+        },
+        {
+          "crop": "Pigeonpea",
+          "pest_profile_key": "pigeonpea"
+        },
+        {
+          "crop": "Sorghum",
+          "pest_profile_key": "sorghum"
+        },
+        {
+          "crop": "Pearl millet",
+          "pest_profile_key": "pearl_millet"
+        },
+        {
+          "crop": "Groundnut",
+          "pest_profile_key": "groundnut"
+        }
+      ],
+      "rabi": [
+        {
+          "crop": "Wheat",
+          "pest_profile_key": "wheat"
+        },
+        {
+          "crop": "Chickpea",
+          "pest_profile_key": "chickpea"
+        },
+        {
+          "crop": "Onion",
+          "pest_profile_key": "onion"
+        },
+        {
+          "crop": "Sorghum",
+          "pest_profile_key": "sorghum"
+        },
+        {
+          "crop": "Sunflower",
+          "pest_profile_key": "sunflower"
+        }
+      ],
+      "zaid": [
+        {
+          "crop": "Watermelon",
+          "pest_profile_key": "watermelon"
+        },
+        {
+          "crop": "Cucumber",
+          "pest_profile_key": "cucumber"
+        },
+        {
+          "crop": "Fodder",
+          "pest_profile_key": "fodder"
+        },
+        {
+          "crop": "Vegetables",
+          "pest_profile_key": "vegetables"
+        }
+      ]
+    },
+    "Manipur": {
+      "kharif": [
+        {
+          "crop": "Rice",
+          "pest_profile_key": "rice"
+        },
+        {
+          "crop": "Maize",
+          "pest_profile_key": "maize"
+        },
+        {
+          "crop": "Pulses",
+          "pest_profile_key": "pulses"
+        },
+        {
+          "crop": "Oilseeds",
+          "pest_profile_key": "oilseeds"
+        }
+      ],
+      "rabi": [
+        {
+          "crop": "Mustard",
+          "pest_profile_key": "mustard"
+        },
+        {
+          "crop": "Potato",
+          "pest_profile_key": "potato"
+        },
+        {
+          "crop": "Pea",
+          "pest_profile_key": "pea"
+        },
+        {
+          "crop": "Lentil",
+          "pest_profile_key": "lentil"
+        }
+      ],
+      "zaid": [
+        {
+          "crop": "Vegetables",
+          "pest_profile_key": "vegetables"
+        },
+        {
+          "crop": "Cucumber",
+          "pest_profile_key": "cucumber"
+        },
+        {
+          "crop": "Moong",
+          "pest_profile_key": "moong"
+        }
+      ]
+    },
+    "Meghalaya": {
+      "kharif": [
+        {
+          "crop": "Rice",
+          "pest_profile_key": "rice"
+        },
+        {
+          "crop": "Maize",
+          "pest_profile_key": "maize"
+        },
+        {
+          "crop": "Potato",
+          "pest_profile_key": "potato"
+        },
+        {
+          "crop": "Ginger",
+          "pest_profile_key": "ginger"
+        }
+      ],
+      "rabi": [
+        {
+          "crop": "Mustard",
+          "pest_profile_key": "mustard"
+        },
+        {
+          "crop": "Potato",
+          "pest_profile_key": "potato"
+        },
+        {
+          "crop": "Pea",
+          "pest_profile_key": "pea"
+        },
+        {
+          "crop": "Lentil",
+          "pest_profile_key": "lentil"
+        }
+      ],
+      "zaid": [
+        {
+          "crop": "Vegetables",
+          "pest_profile_key": "vegetables"
+        },
+        {
+          "crop": "Cucumber",
+          "pest_profile_key": "cucumber"
+        },
+        {
+          "crop": "Fodder",
+          "pest_profile_key": "fodder"
+        }
+      ]
+    },
+    "Mizoram": {
+      "kharif": [
+        {
+          "crop": "Rice",
+          "pest_profile_key": "rice"
+        },
+        {
+          "crop": "Maize",
+          "pest_profile_key": "maize"
+        },
+        {
+          "crop": "Ginger",
+          "pest_profile_key": "ginger"
+        },
+        {
+          "crop": "Turmeric",
+          "pest_profile_key": "turmeric"
+        },
+        {
+          "crop": "Pulses",
+          "pest_profile_key": "pulses"
+        }
+      ],
+      "rabi": [
+        {
+          "crop": "Mustard",
+          "pest_profile_key": "mustard"
+        },
+        {
+          "crop": "Pea",
+          "pest_profile_key": "pea"
+        },
+        {
+          "crop": "Potato",
+          "pest_profile_key": "potato"
+        },
+        {
+          "crop": "Vegetables",
+          "pest_profile_key": "vegetables"
+        }
+      ],
+      "zaid": [
+        {
+          "crop": "Vegetables",
+          "pest_profile_key": "vegetables"
+        },
+        {
+          "crop": "Cucumber",
+          "pest_profile_key": "cucumber"
+        },
+        {
+          "crop": "Moong",
+          "pest_profile_key": "moong"
+        }
+      ]
+    },
+    "Nagaland": {
+      "kharif": [
+        {
+          "crop": "Rice",
+          "pest_profile_key": "rice"
+        },
+        {
+          "crop": "Maize",
+          "pest_profile_key": "maize"
+        },
+        {
+          "crop": "Millets",
+          "pest_profile_key": "millets"
+        },
+        {
+          "crop": "Pulses",
+          "pest_profile_key": "pulses"
+        }
+      ],
+      "rabi": [
+        {
+          "crop": "Mustard",
+          "pest_profile_key": "mustard"
+        },
+        {
+          "crop": "Potato",
+          "pest_profile_key": "potato"
+        },
+        {
+          "crop": "Pea",
+          "pest_profile_key": "pea"
+        },
+        {
+          "crop": "Lentil",
+          "pest_profile_key": "lentil"
+        }
+      ],
+      "zaid": [
+        {
+          "crop": "Vegetables",
+          "pest_profile_key": "vegetables"
+        },
+        {
+          "crop": "Cucumber",
+          "pest_profile_key": "cucumber"
+        },
+        {
+          "crop": "Fodder",
+          "pest_profile_key": "fodder"
+        }
+      ]
+    },
+    "Odisha": {
+      "kharif": [
+        {
+          "crop": "Rice",
+          "pest_profile_key": "rice"
+        },
+        {
+          "crop": "Cotton",
+          "pest_profile_key": "cotton"
+        },
+        {
+          "crop": "Groundnut",
+          "pest_profile_key": "groundnut"
+        },
+        {
+          "crop": "Maize",
+          "pest_profile_key": "maize"
+        },
+        {
+          "crop": "Pulses",
+          "pest_profile_key": "pulses"
+        },
+        {
+          "crop": "Jute",
+          "pest_profile_key": "jute"
+        }
+      ],
+      "rabi": [
+        {
+          "crop": "Wheat",
+          "pest_profile_key": "wheat"
+        },
+        {
+          "crop": "Mustard",
+          "pest_profile_key": "mustard"
+        },
+        {
+          "crop": "Potato",
+          "pest_profile_key": "potato"
+        },
+        {
+          "crop": "Lentil",
+          "pest_profile_key": "lentil"
+        },
+        {
+          "crop": "Chickpea",
+          "pest_profile_key": "chickpea"
+        }
+      ],
+      "zaid": [
+        {
+          "crop": "Vegetables",
+          "pest_profile_key": "vegetables"
+        },
+        {
+          "crop": "Cucumber",
+          "pest_profile_key": "cucumber"
+        },
+        {
+          "crop": "Moong",
+          "pest_profile_key": "moong"
+        }
+      ]
+    },
+    "Punjab": {
+      "kharif": [
+        {
+          "crop": "Rice",
+          "pest_profile_key": "rice"
+        },
+        {
+          "crop": "Cotton",
+          "pest_profile_key": "cotton"
+        },
+        {
+          "crop": "Maize",
+          "pest_profile_key": "maize"
+        },
+        {
+          "crop": "Sugarcane",
+          "pest_profile_key": "sugarcane"
+        },
+        {
+          "crop": "Pearl millet",
+          "pest_profile_key": "pearl_millet"
+        }
+      ],
+      "rabi": [
+        {
+          "crop": "Wheat",
+          "pest_profile_key": "wheat"
+        },
+        {
+          "crop": "Mustard",
+          "pest_profile_key": "mustard"
+        },
+        {
+          "crop": "Barley",
+          "pest_profile_key": "barley"
+        },
+        {
+          "crop": "Chickpea",
+          "pest_profile_key": "chickpea"
+        },
+        {
+          "crop": "Lentil",
+          "pest_profile_key": "lentil"
+        }
+      ],
+      "zaid": [
+        {
+          "crop": "Fodder",
+          "pest_profile_key": "fodder"
+        },
+        {
+          "crop": "Vegetables",
+          "pest_profile_key": "vegetables"
+        },
+        {
+          "crop": "Cucumber",
+          "pest_profile_key": "cucumber"
+        }
+      ]
+    },
+    "Rajasthan": {
+      "kharif": [
+        {
+          "crop": "Pearl millet",
+          "pest_profile_key": "pearl_millet"
+        },
+        {
+          "crop": "Guar",
+          "pest_profile_key": "guar"
+        },
+        {
+          "crop": "Moong",
+          "pest_profile_key": "moong"
+        },
+        {
+          "crop": "Moth bean",
+          "pest_profile_key": "moth_bean"
+        },
+        {
+          "crop": "Cotton",
+          "pest_profile_key": "cotton"
+        },
+        {
+          "crop": "Sesame",
+          "pest_profile_key": "sesame"
+        }
+      ],
+      "rabi": [
+        {
+          "crop": "Wheat",
+          "pest_profile_key": "wheat"
+        },
+        {
+          "crop": "Mustard",
+          "pest_profile_key": "mustard"
+        },
+        {
+          "crop": "Chickpea",
+          "pest_profile_key": "chickpea"
+        },
+        {
+          "crop": "Barley",
+          "pest_profile_key": "barley"
+        },
+        {
+          "crop": "Cumin",
+          "pest_profile_key": "cumin"
+        }
+      ],
+      "zaid": [
+        {
+          "crop": "Fodder",
+          "pest_profile_key": "fodder"
+        },
+        {
+          "crop": "Watermelon",
+          "pest_profile_key": "watermelon"
+        },
+        {
+          "crop": "Cucumber",
+          "pest_profile_key": "cucumber"
+        }
+      ]
+    },
+    "Sikkim": {
+      "kharif": [
+        {
+          "crop": "Rice",
+          "pest_profile_key": "rice"
+        },
+        {
+          "crop": "Maize",
+          "pest_profile_key": "maize"
+        },
+        {
+          "crop": "Ginger",
+          "pest_profile_key": "ginger"
+        },
+        {
+          "crop": "Cardamom",
+          "pest_profile_key": "cardamom"
+        },
+        {
+          "crop": "Potato",
+          "pest_profile_key": "potato"
+        }
+      ],
+      "rabi": [
+        {
+          "crop": "Wheat",
+          "pest_profile_key": "wheat"
+        },
+        {
+          "crop": "Mustard",
+          "pest_profile_key": "mustard"
+        },
+        {
+          "crop": "Potato",
+          "pest_profile_key": "potato"
+        },
+        {
+          "crop": "Pea",
+          "pest_profile_key": "pea"
+        }
+      ],
+      "zaid": [
+        {
+          "crop": "Vegetables",
+          "pest_profile_key": "vegetables"
+        },
+        {
+          "crop": "Cucumber",
+          "pest_profile_key": "cucumber"
+        },
+        {
+          "crop": "Fodder",
+          "pest_profile_key": "fodder"
+        }
+      ]
+    },
+    "Tamil Nadu": {
+      "kharif": [
+        {
+          "crop": "Rice",
+          "pest_profile_key": "rice"
+        },
+        {
+          "crop": "Sugarcane",
+          "pest_profile_key": "sugarcane"
+        },
+        {
+          "crop": "Groundnut",
+          "pest_profile_key": "groundnut"
+        },
+        {
+          "crop": "Cotton",
+          "pest_profile_key": "cotton"
+        },
+        {
+          "crop": "Millets",
+          "pest_profile_key": "millets"
+        }
+      ],
+      "rabi": [
+        {
+          "crop": "Rice",
+          "pest_profile_key": "rice"
+        },
+        {
+          "crop": "Pulses",
+          "pest_profile_key": "pulses"
+        },
+        {
+          "crop": "Banana",
+          "pest_profile_key": "banana"
+        },
+        {
+          "crop": "Vegetables",
+          "pest_profile_key": "vegetables"
+        },
+        {
+          "crop": "Sunflower",
+          "pest_profile_key": "sunflower"
+        }
+      ],
+      "zaid": [
+        {
+          "crop": "Vegetables",
+          "pest_profile_key": "vegetables"
+        },
+        {
+          "crop": "Cucumber",
+          "pest_profile_key": "cucumber"
+        },
+        {
+          "crop": "Watermelon",
+          "pest_profile_key": "watermelon"
+        },
+        {
+          "crop": "Fodder",
+          "pest_profile_key": "fodder"
+        }
+      ]
+    },
+    "Telangana": {
+      "kharif": [
+        {
+          "crop": "Rice",
+          "pest_profile_key": "rice"
+        },
+        {
+          "crop": "Cotton",
+          "pest_profile_key": "cotton"
+        },
+        {
+          "crop": "Maize",
+          "pest_profile_key": "maize"
+        },
+        {
+          "crop": "Pigeonpea",
+          "pest_profile_key": "pigeonpea"
+        },
+        {
+          "crop": "Groundnut",
+          "pest_profile_key": "groundnut"
+        }
+      ],
+      "rabi": [
+        {
+          "crop": "Rice",
+          "pest_profile_key": "rice"
+        },
+        {
+          "crop": "Chickpea",
+          "pest_profile_key": "chickpea"
+        },
+        {
+          "crop": "Mustard",
+          "pest_profile_key": "mustard"
+        },
+        {
+          "crop": "Sunflower",
+          "pest_profile_key": "sunflower"
+        },
+        {
+          "crop": "Vegetables",
+          "pest_profile_key": "vegetables"
+        }
+      ],
+      "zaid": [
+        {
+          "crop": "Vegetables",
+          "pest_profile_key": "vegetables"
+        },
+        {
+          "crop": "Cucumber",
+          "pest_profile_key": "cucumber"
+        },
+        {
+          "crop": "Watermelon",
+          "pest_profile_key": "watermelon"
+        }
+      ]
+    },
+    "Tripura": {
+      "kharif": [
+        {
+          "crop": "Rice",
+          "pest_profile_key": "rice"
+        },
+        {
+          "crop": "Jute",
+          "pest_profile_key": "jute"
+        },
+        {
+          "crop": "Pineapple",
+          "pest_profile_key": "pineapple"
+        },
+        {
+          "crop": "Tea",
+          "pest_profile_key": "tea"
+        },
+        {
+          "crop": "Maize",
+          "pest_profile_key": "maize"
+        }
+      ],
+      "rabi": [
+        {
+          "crop": "Mustard",
+          "pest_profile_key": "mustard"
+        },
+        {
+          "crop": "Potato",
+          "pest_profile_key": "potato"
+        },
+        {
+          "crop": "Pulses",
+          "pest_profile_key": "pulses"
+        },
+        {
+          "crop": "Pea",
+          "pest_profile_key": "pea"
+        }
+      ],
+      "zaid": [
+        {
+          "crop": "Vegetables",
+          "pest_profile_key": "vegetables"
+        },
+        {
+          "crop": "Cucumber",
+          "pest_profile_key": "cucumber"
+        },
+        {
+          "crop": "Moong",
+          "pest_profile_key": "moong"
+        }
+      ]
+    },
+    "Uttar Pradesh": {
+      "kharif": [
+        {
+          "crop": "Rice",
+          "pest_profile_key": "rice"
+        },
+        {
+          "crop": "Maize",
+          "pest_profile_key": "maize"
+        },
+        {
+          "crop": "Sugarcane",
+          "pest_profile_key": "sugarcane"
+        },
+        {
+          "crop": "Pigeonpea",
+          "pest_profile_key": "pigeonpea"
+        },
+        {
+          "crop": "Sesame",
+          "pest_profile_key": "sesame"
+        }
+      ],
+      "rabi": [
+        {
+          "crop": "Wheat",
+          "pest_profile_key": "wheat"
+        },
+        {
+          "crop": "Mustard",
+          "pest_profile_key": "mustard"
+        },
+        {
+          "crop": "Barley",
+          "pest_profile_key": "barley"
+        },
+        {
+          "crop": "Chickpea",
+          "pest_profile_key": "chickpea"
+        },
+        {
+          "crop": "Lentil",
+          "pest_profile_key": "lentil"
+        },
+        {
+          "crop": "Pea",
+          "pest_profile_key": "pea"
+        }
+      ],
+      "zaid": [
+        {
+          "crop": "Moong",
+          "pest_profile_key": "moong"
+        },
+        {
+          "crop": "Watermelon",
+          "pest_profile_key": "watermelon"
+        },
+        {
+          "crop": "Cucumber",
+          "pest_profile_key": "cucumber"
+        },
+        {
+          "crop": "Fodder",
+          "pest_profile_key": "fodder"
+        },
+        {
+          "crop": "Vegetables",
+          "pest_profile_key": "vegetables"
+        }
+      ]
+    },
+    "Uttarakhand": {
+      "kharif": [
+        {
+          "crop": "Rice",
+          "pest_profile_key": "rice"
+        },
+        {
+          "crop": "Maize",
+          "pest_profile_key": "maize"
+        },
+        {
+          "crop": "Soybean",
+          "pest_profile_key": "soybean"
+        },
+        {
+          "crop": "Millets",
+          "pest_profile_key": "millets"
+        }
+      ],
+      "rabi": [
+        {
+          "crop": "Wheat",
+          "pest_profile_key": "wheat"
+        },
+        {
+          "crop": "Barley",
+          "pest_profile_key": "barley"
+        },
+        {
+          "crop": "Mustard",
+          "pest_profile_key": "mustard"
+        },
+        {
+          "crop": "Lentil",
+          "pest_profile_key": "lentil"
+        },
+        {
+          "crop": "Pea",
+          "pest_profile_key": "pea"
+        }
+      ],
+      "zaid": [
+        {
+          "crop": "Vegetables",
+          "pest_profile_key": "vegetables"
+        },
+        {
+          "crop": "Cucumber",
+          "pest_profile_key": "cucumber"
+        },
+        {
+          "crop": "Fodder",
+          "pest_profile_key": "fodder"
+        }
+      ]
+    },
+    "West Bengal": {
+      "kharif": [
+        {
+          "crop": "Rice",
+          "pest_profile_key": "rice"
+        },
+        {
+          "crop": "Jute",
+          "pest_profile_key": "jute"
+        },
+        {
+          "crop": "Maize",
+          "pest_profile_key": "maize"
+        },
+        {
+          "crop": "Sugarcane",
+          "pest_profile_key": "sugarcane"
+        },
+        {
+          "crop": "Tea",
+          "pest_profile_key": "tea"
+        }
+      ],
+      "rabi": [
+        {
+          "crop": "Potato",
+          "pest_profile_key": "potato"
+        },
+        {
+          "crop": "Wheat",
+          "pest_profile_key": "wheat"
+        },
+        {
+          "crop": "Mustard",
+          "pest_profile_key": "mustard"
+        },
+        {
+          "crop": "Lentil",
+          "pest_profile_key": "lentil"
+        },
+        {
+          "crop": "Chickpea",
+          "pest_profile_key": "chickpea"
+        }
+      ],
+      "zaid": [
+        {
+          "crop": "Vegetables",
+          "pest_profile_key": "vegetables"
+        },
+        {
+          "crop": "Watermelon",
+          "pest_profile_key": "watermelon"
+        },
+        {
+          "crop": "Cucumber",
+          "pest_profile_key": "cucumber"
+        },
+        {
+          "crop": "Moong",
+          "pest_profile_key": "moong"
+        }
+      ]
+    }
+  },
+  "pest_library": {
+    "rice": {
+      "common_name": "Rice / Paddy",
+      "top_pests": [
+        {
+          "pest": "Stem borer",
+          "symptoms": "Dead hearts in vegetative stage; white ear heads later.",
+          "first_response": "Remove infested tillers, use pheromone traps, keep nitrogen balanced."
+        },
+        {
+          "pest": "Leaf folder",
+          "symptoms": "Leaves folded and scraped, reducing photosynthesis.",
+          "first_response": "Scout early; avoid excess nitrogen and encourage natural enemies."
+        },
+        {
+          "pest": "Brown planthopper",
+          "symptoms": "Hopper burn patches, sooty mold, plant drying in clumps.",
+          "first_response": "Monitor closely and avoid indiscriminate insecticide use."
+        }
+      ],
+      "basis": "ICAR/NIPHM rice IPM advisories."
+    },
+    "wheat": {
+      "common_name": "Wheat",
+      "top_pests": [
+        {
+          "pest": "Aphids",
+          "symptoms": "Curling leaves, sticky honeydew, poor grain fill.",
+          "first_response": "Regular scouting, avoid excess nitrogen, conserve beneficial insects."
+        },
+        {
+          "pest": "Termites",
+          "symptoms": "Drying seedlings, hollow stems, patchy stand loss.",
+          "first_response": "Treat seed and ensure good soil moisture at sowing."
+        },
+        {
+          "pest": "Armyworm / cutworm",
+          "symptoms": "Night feeding, leaf chewing, sudden defoliation in patches.",
+          "first_response": "Deep ploughing before sowing and field monitoring."
+        }
+      ],
+      "basis": "Common wheat pests in Indian extension advisories."
+    },
+    "maize": {
+      "common_name": "Maize",
+      "top_pests": [
+        {
+          "pest": "Fall armyworm",
+          "symptoms": "Whorl feeding, frass, shredded leaves, damaged cobs.",
+          "first_response": "Uniform sowing, pheromone traps, bird perches, frequent scouting."
+        },
+        {
+          "pest": "Stem borer",
+          "symptoms": "Dead hearts and bore holes in stems.",
+          "first_response": "Destroy egg masses and damaged plants; use resistant hybrids."
+        },
+        {
+          "pest": "Aphids",
+          "symptoms": "Honeydew, curled leaves, reduced vigor.",
+          "first_response": "Monitor early and keep nutrition balanced."
+        }
+      ],
+      "basis": "PPQS/ICAR maize advisories."
+    },
+    "cotton": {
+      "common_name": "Cotton",
+      "top_pests": [
+        {
+          "pest": "Whitefly",
+          "symptoms": "Leaf curling, honeydew, sticky lint, virus risk.",
+          "first_response": "Avoid excess pyrethroids, remove weeds, monitor early season populations."
+        },
+        {
+          "pest": "Pink bollworm",
+          "symptoms": "Rosette flowers, damaged bolls, pink larvae inside bolls.",
+          "first_response": "Use pheromone traps and destroy infested bolls."
+        },
+        {
+          "pest": "Aphids / jassids",
+          "symptoms": "Leaf curling and yellowing, hopper-burn-like symptoms.",
+          "first_response": "Scout young crop regularly and avoid excessive nitrogen."
+        }
+      ],
+      "basis": "ICAR-CICR and PPQS cotton advisories."
+    },
+    "mustard": {
+      "common_name": "Indian mustard / rapeseed-mustard",
+      "top_pests": [
+        {
+          "pest": "Mustard aphid",
+          "symptoms": "Clustering on shoots and flowers; stunted siliqua development.",
+          "first_response": "Early sowing and regular scouting."
+        },
+        {
+          "pest": "Mustard sawfly",
+          "symptoms": "Leaf skeletonization, especially in seedling stage.",
+          "first_response": "Monitor seedlings closely and destroy early infestations."
+        },
+        {
+          "pest": "Painted bug",
+          "symptoms": "Sucking damage on developing pods and seeds.",
+          "first_response": "Field sanitation and local advisory-based control."
+        }
+      ],
+      "basis": "ICAR mustard pest literature."
+    },
+    "sugarcane": {
+      "common_name": "Sugarcane",
+      "top_pests": [
+        {
+          "pest": "Early shoot borer",
+          "symptoms": "Dead hearts in young crop; weak tillering.",
+          "first_response": "Remove dead hearts, treat setts, maintain timely planting."
+        },
+        {
+          "pest": "Top borer",
+          "symptoms": "Drying of top leaves and damaged growing point.",
+          "first_response": "Detrashing and destruction of affected shoots."
+        },
+        {
+          "pest": "Pyrilla",
+          "symptoms": "Leaf yellowing and sticky honeydew.",
+          "first_response": "Field sanitation and natural enemy conservation."
+        }
+      ],
+      "basis": "ICAR/IPM sugarcane advisories."
+    },
+    "soybean": {
+      "common_name": "Soybean",
+      "top_pests": [
+        {
+          "pest": "Girdle beetle",
+          "symptoms": "Girdled stems and drying plants.",
+          "first_response": "Avoid monoculture and remove infested plants."
+        },
+        {
+          "pest": "Semilooper",
+          "symptoms": "Defoliation with looping larvae on leaves.",
+          "first_response": "Early monitoring and intercropping/biological control support."
+        },
+        {
+          "pest": "Tobacco caterpillar / whitefly",
+          "symptoms": "Defoliation and sap sucking.",
+          "first_response": "Crop rotation, scout regularly, avoid unnecessary sprays."
+        }
+      ],
+      "basis": "NIPHM soybean IPM package."
+    },
+    "groundnut": {
+      "common_name": "Groundnut / peanut",
+      "top_pests": [
+        {
+          "pest": "Thrips",
+          "symptoms": "Leaf curling and silvery patches; can reduce pegging.",
+          "first_response": "Timely sowing, border crops, scouting at seedling stage."
+        },
+        {
+          "pest": "Jassids / leaf hoppers",
+          "symptoms": "Leaf yellowing and downward curling.",
+          "first_response": "Monitor early and keep nutrition balanced."
+        },
+        {
+          "pest": "Leaf miner",
+          "symptoms": "Serpentine mines on leaves and premature defoliation.",
+          "first_response": "Use crop rotation and ETL-based intervention."
+        }
+      ],
+      "basis": "ICAR-IIGR and surveillance literature."
+    },
+    "chickpea": {
+      "common_name": "Chickpea / gram",
+      "top_pests": [
+        {
+          "pest": "Pod borer",
+          "symptoms": "Bored pods and fed seeds.",
+          "first_response": "Use pheromone traps, bird perches, timely sowing."
+        },
+        {
+          "pest": "Aphids",
+          "symptoms": "Sap sucking on tender shoots and pods.",
+          "first_response": "Scout early and conserve beneficial insects."
+        },
+        {
+          "pest": "Cutworm",
+          "symptoms": "Seedling cut at ground level.",
+          "first_response": "Field sanitation and early stage monitoring."
+        }
+      ],
+      "basis": "Pulse advisories and PPQS references."
+    },
+    "pigeonpea": {
+      "common_name": "Pigeonpea / tur / arhar",
+      "top_pests": [
+        {
+          "pest": "Pod borer",
+          "symptoms": "Hole feeding in pods; grain damage.",
+          "first_response": "Pheromone traps and stage-wise monitoring."
+        },
+        {
+          "pest": "Pod fly",
+          "symptoms": "Shriveled or unfilled seeds inside pods.",
+          "first_response": "Timely sowing and destruction of infested pods."
+        },
+        {
+          "pest": "Aphids / whitefly",
+          "symptoms": "Leaf curling and sap sucking.",
+          "first_response": "Monitor early and avoid excess nitrogen."
+        }
+      ],
+      "basis": "PPQS tables and pulse advisories."
+    },
+    "lentil": {
+      "common_name": "Lentil",
+      "top_pests": [
+        {
+          "pest": "Aphids",
+          "symptoms": "Curling, yellowing and honeydew.",
+          "first_response": "Scout at flowering and avoid excessive nitrogen."
+        },
+        {
+          "pest": "Pod borer",
+          "symptoms": "Pod feeding and damaged seed.",
+          "first_response": "Use pheromone traps and stage-wise scouting."
+        },
+        {
+          "pest": "Cutworm",
+          "symptoms": "Seedling cut at soil surface.",
+          "first_response": "Proper tillage and residue management."
+        }
+      ],
+      "basis": "Legume IPM advisories."
+    },
+    "jute": {
+      "common_name": "Jute",
+      "top_pests": [
+        {
+          "pest": "Hairy caterpillar",
+          "symptoms": "Defoliation and webbing on leaves.",
+          "first_response": "Early monitoring and manual removal in small plots."
+        },
+        {
+          "pest": "Semilooper",
+          "symptoms": "Leaf feeding causing patchy defoliation.",
+          "first_response": "Use light traps and scout field edges."
+        },
+        {
+          "pest": "Stem weevil",
+          "symptoms": "Stem damage and poor fiber quality.",
+          "first_response": "Sanitation and timely sowing."
+        }
+      ],
+      "basis": "Jute protection advisories."
+    },
+    "pearl_millet": {
+      "common_name": "Pearl millet / bajra",
+      "top_pests": [
+        {
+          "pest": "Shoot fly",
+          "symptoms": "Dead hearts in seedlings.",
+          "first_response": "Early sowing and uniform crop establishment."
+        },
+        {
+          "pest": "Stem borer",
+          "symptoms": "Bore holes and dead hearts.",
+          "first_response": "Destroy damaged seedlings and use scouting."
+        },
+        {
+          "pest": "Armyworm",
+          "symptoms": "Defoliation in patches.",
+          "first_response": "Field scouting and early intervention."
+        }
+      ],
+      "basis": "Millet IPM guidance."
+    },
+    "sorghum": {
+      "common_name": "Sorghum / jowar",
+      "top_pests": [
+        {
+          "pest": "Shoot fly",
+          "symptoms": "Dead hearts at seedling stage.",
+          "first_response": "Timely sowing and resistant varieties."
+        },
+        {
+          "pest": "Stem borer",
+          "symptoms": "Stem tunneling and dead hearts.",
+          "first_response": "Scout and destroy infested plants."
+        },
+        {
+          "pest": "Aphids / midge",
+          "symptoms": "Sap sucking and poor grain set.",
+          "first_response": "Monitor at heading stage and avoid excess nitrogen."
+        }
+      ],
+      "basis": "Sorghum pest management guides."
+    },
+    "barley": {
+      "common_name": "Barley",
+      "top_pests": [
+        {
+          "pest": "Aphids",
+          "symptoms": "Leaf curling and honeydew.",
+          "first_response": "Early scouting and conservation of predators."
+        },
+        {
+          "pest": "Termites",
+          "symptoms": "Patchy germination and drying seedlings.",
+          "first_response": "Seed treatment and moisture management."
+        },
+        {
+          "pest": "Armyworm",
+          "symptoms": "Leaf chewing and defoliation.",
+          "first_response": "Monitoring and field sanitation."
+        }
+      ],
+      "basis": "Barley advisories from North India."
+    },
+    "potato": {
+      "common_name": "Potato",
+      "top_pests": [
+        {
+          "pest": "Potato tuber moth",
+          "symptoms": "Mine galleries in leaves and tubers.",
+          "first_response": "Earthing up, store hygiene and pheromone traps."
+        },
+        {
+          "pest": "Aphids",
+          "symptoms": "Leaf curling and virus spread.",
+          "first_response": "Monitor vectors early and rogue infected plants."
+        },
+        {
+          "pest": "Cutworm",
+          "symptoms": "Seedling cut near soil line.",
+          "first_response": "Tillage and residue management."
+        }
+      ],
+      "basis": "Potato IPM advisories."
+    },
+    "onion": {
+      "common_name": "Onion",
+      "top_pests": [
+        {
+          "pest": "Thrips",
+          "symptoms": "Silvery streaks and leaf curling.",
+          "first_response": "Water stress avoidance and regular scouting."
+        },
+        {
+          "pest": "Onion maggot",
+          "symptoms": "Wilting seedlings and root damage.",
+          "first_response": "Crop rotation and field sanitation."
+        },
+        {
+          "pest": "Armyworm",
+          "symptoms": "Leaf feeding and defoliation.",
+          "first_response": "Scout at dusk and use local recommendations."
+        }
+      ],
+      "basis": "PPQS onion pest references."
+    },
+    "sunflower": {
+      "common_name": "Sunflower",
+      "top_pests": [
+        {
+          "pest": "Capitulum borer",
+          "symptoms": "Damaged flower head and seed loss.",
+          "first_response": "Remove infested heads and scout at flowering."
+        },
+        {
+          "pest": "Leafhopper",
+          "symptoms": "Leaf yellowing and hopper burn.",
+          "first_response": "Balanced nutrition and field monitoring."
+        },
+        {
+          "pest": "Tobacco caterpillar",
+          "symptoms": "Defoliation and head damage.",
+          "first_response": "Early scouting and biological control support."
+        }
+      ],
+      "basis": "Sunflower advisories."
+    },
+    "sesame": {
+      "common_name": "Sesame / til",
+      "top_pests": [
+        {
+          "pest": "Sesame webworm",
+          "symptoms": "Webbed leaves and damaged capsules.",
+          "first_response": "Regular scouting and removal of webbed parts."
+        },
+        {
+          "pest": "Gall fly",
+          "symptoms": "Swollen stems and reduced capsule formation.",
+          "first_response": "Timely sowing and field sanitation."
+        },
+        {
+          "pest": "Leaf roller",
+          "symptoms": "Rolled leaves and reduced leaf area.",
+          "first_response": "Monitor early and use local IPM measures."
+        }
+      ],
+      "basis": "Sesame IPM references."
+    },
+    "banana": {
+      "common_name": "Banana",
+      "top_pests": [
+        {
+          "pest": "Banana weevil",
+          "symptoms": "Tunneling in rhizome, weak plants, lodging.",
+          "first_response": "Clean planting material and field sanitation."
+        },
+        {
+          "pest": "Pseudostem borer",
+          "symptoms": "Bore holes in pseudostem, weakening of plant.",
+          "first_response": "Remove affected plant debris and monitor regularly."
+        },
+        {
+          "pest": "Aphids",
+          "symptoms": "Leaf curling and virus transmission.",
+          "first_response": "Control vectors and use healthy suckers."
+        }
+      ],
+      "basis": "Banana pest advisories."
+    },
+    "coconut": {
+      "common_name": "Coconut",
+      "top_pests": [
+        {
+          "pest": "Rhinoceros beetle",
+          "symptoms": "Damaged crown and V-shaped cuts on leaves.",
+          "first_response": "Sanitation of breeding sites and crown protection."
+        },
+        {
+          "pest": "Red palm weevil",
+          "symptoms": "Wilting crown, holes with frass, internal trunk damage.",
+          "first_response": "Monitor palms and remove heavily infested trees."
+        },
+        {
+          "pest": "Black-headed caterpillar",
+          "symptoms": "Skeletonized leaves and reduced photosynthesis.",
+          "first_response": "Remove and destroy infested fronds."
+        }
+      ],
+      "basis": "Coconut IPM notes."
+    },
+    "tea": {
+      "common_name": "Tea",
+      "top_pests": [
+        {
+          "pest": "Tea mosquito bug",
+          "symptoms": "Browning of tender shoots and deformed leaves.",
+          "first_response": "Monitor flushes and prune properly."
+        },
+        {
+          "pest": "Red spider mite",
+          "symptoms": "Bronzing, mottling and dry leaves.",
+          "first_response": "Maintain shade and humidity balance."
+        },
+        {
+          "pest": "Looper caterpillar",
+          "symptoms": "Leaf feeding and defoliation.",
+          "first_response": "Scout at the first sign of feeding."
+        }
+      ],
+      "basis": "Tea pest advisories."
+    },
+    "coffee": {
+      "common_name": "Coffee",
+      "top_pests": [
+        {
+          "pest": "Coffee berry borer",
+          "symptoms": "Bore holes in berries and bean loss.",
+          "first_response": "Timely picking and sanitation of fallen berries."
+        },
+        {
+          "pest": "White stem borer",
+          "symptoms": "Stem tunneling and branch drying.",
+          "first_response": "Shade management and removal of infested stems."
+        },
+        {
+          "pest": "Leaf miner",
+          "symptoms": "Mined leaf tissue and reduced photosynthesis.",
+          "first_response": "Monitor flushes and protect beneficial insects."
+        }
+      ],
+      "basis": "Coffee advisories."
+    },
+    "rubber": {
+      "common_name": "Rubber",
+      "top_pests": [
+        {
+          "pest": "Scale insects",
+          "symptoms": "Sap sucking, sticky deposits and leaf yellowing.",
+          "first_response": "Prune heavily infested parts and conserve predators."
+        },
+        {
+          "pest": "Mealybugs",
+          "symptoms": "White cottony clusters on shoots and leaves.",
+          "first_response": "Field sanitation and targeted local control."
+        },
+        {
+          "pest": "Root grub",
+          "symptoms": "Reduced vigour and root damage.",
+          "first_response": "Soil sanitation and monitoring around tree basins."
+        }
+      ],
+      "basis": "Rubber plantation advisories."
+    },
+    "cardamom": {
+      "common_name": "Cardamom",
+      "top_pests": [
+        {
+          "pest": "Thrips",
+          "symptoms": "Chaffy capsules and leaf discoloration.",
+          "first_response": "Shade management and regular monitoring."
+        },
+        {
+          "pest": "Capsule borer",
+          "symptoms": "Damaged capsules and seed loss.",
+          "first_response": "Collect and destroy infested capsules."
+        },
+        {
+          "pest": "Shoot borer",
+          "symptoms": "Dead hearts and weak tillers.",
+          "first_response": "Remove infested shoots and maintain sanitation."
+        }
+      ],
+      "basis": "Cardamom pest advisories."
+    },
+    "ginger": {
+      "common_name": "Ginger",
+      "top_pests": [
+        {
+          "pest": "Shoot borer",
+          "symptoms": "Dead shoots and bore holes.",
+          "first_response": "Remove affected shoots and keep planting material healthy."
+        },
+        {
+          "pest": "Rhizome scale",
+          "symptoms": "Scales on rhizomes and storage issues.",
+          "first_response": "Use clean rhizomes and field sanitation."
+        },
+        {
+          "pest": "Root-knot nematode",
+          "symptoms": "Stunted plants and root galls.",
+          "first_response": "Crop rotation and healthy seed rhizomes."
+        }
+      ],
+      "basis": "Ginger advisories."
+    },
+    "turmeric": {
+      "common_name": "Turmeric",
+      "top_pests": [
+        {
+          "pest": "Shoot borer",
+          "symptoms": "Dead hearts and shoot damage.",
+          "first_response": "Remove affected shoots and maintain field cleanliness."
+        },
+        {
+          "pest": "Rhizome scale",
+          "symptoms": "Rhizome feeding and poor storage quality.",
+          "first_response": "Use disease-free seed rhizomes and proper curing."
+        },
+        {
+          "pest": "Leaf roller",
+          "symptoms": "Rolled leaves and reduced leaf area.",
+          "first_response": "Monitor early and use local IPM advice."
+        }
+      ],
+      "basis": "Turmeric pest management guides."
+    },
+    "pineapple": {
+      "common_name": "Pineapple",
+      "top_pests": [
+        {
+          "pest": "Mealybug",
+          "symptoms": "Cottony clusters and honeydew.",
+          "first_response": "Use clean planting material and ant control."
+        },
+        {
+          "pest": "Scale insect",
+          "symptoms": "Yellowing and sticky deposits.",
+          "first_response": "Inspect plant crowns and remove heavily infested material."
+        },
+        {
+          "pest": "Fruit borer",
+          "symptoms": "Bored fruits and premature rotting.",
+          "first_response": "Bagging and field sanitation."
+        }
+      ],
+      "basis": "Pineapple advisories."
+    },
+    "cashew": {
+      "common_name": "Cashew",
+      "top_pests": [
+        {
+          "pest": "Tea mosquito bug",
+          "symptoms": "Blighted shoots, damaged flushes and inflorescences.",
+          "first_response": "Monitor flowering flush and use sanitation."
+        },
+        {
+          "pest": "Stem and root borer",
+          "symptoms": "Trunk damage, gum exudation and decline.",
+          "first_response": "Remove infested trees and protect trunks."
+        },
+        {
+          "pest": "Leaf miner",
+          "symptoms": "Mined leaves and reduced photosynthesis.",
+          "first_response": "Use scouting and preserve natural enemies."
+        }
+      ],
+      "basis": "Cashew crop advisories."
+    },
+    "vegetables": {
+      "common_name": "Mixed vegetables",
+      "top_pests": [
+        {
+          "pest": "Aphids",
+          "symptoms": "Curling, stunting and honeydew.",
+          "first_response": "Scout early and remove weed hosts."
+        },
+        {
+          "pest": "Whitefly",
+          "symptoms": "Sooty mold, yellowing and virus spread.",
+          "first_response": "Use insect screens in nursery and monitor with traps."
+        },
+        {
+          "pest": "Thrips / fruit borer",
+          "symptoms": "Silvery leaves, flower drop or fruit damage depending on crop.",
+          "first_response": "Use crop-specific IPM and avoid water stress."
+        }
+      ],
+      "basis": "Generic vegetable IPM."
+    },
+    "watermelon": {
+      "common_name": "Watermelon / summer melon",
+      "top_pests": [
+        {
+          "pest": "Aphids",
+          "symptoms": "Leaf curling and virus transmission.",
+          "first_response": "Scout seedling stage and control weeds."
+        },
+        {
+          "pest": "Whitefly",
+          "symptoms": "Yellowing and sticky honeydew.",
+          "first_response": "Use reflective mulches / sticky traps and field sanitation."
+        },
+        {
+          "pest": "Fruit fly",
+          "symptoms": "Larval tunneling inside fruits.",
+          "first_response": "Destroy fallen fruits and use bait traps."
+        }
+      ],
+      "basis": "Melon advisories."
+    },
+    "cucumber": {
+      "common_name": "Cucumber",
+      "top_pests": [
+        {
+          "pest": "Aphids",
+          "symptoms": "Curling leaves and virus spread.",
+          "first_response": "Monitor at seedling stage and use clean nursery practices."
+        },
+        {
+          "pest": "Whitefly",
+          "symptoms": "Sticky honeydew and leaf yellowing.",
+          "first_response": "Use insect-proof nursery netting and traps."
+        },
+        {
+          "pest": "Fruit fly / leaf miner",
+          "symptoms": "Fruit punctures or mined leaves.",
+          "first_response": "Sanitation and trap-based management."
+        }
+      ],
+      "basis": "Cucurbit IPM guidance."
+    },
+    "moong": {
+      "common_name": "Moong / green gram",
+      "top_pests": [
+        {
+          "pest": "Aphids",
+          "symptoms": "Sap sucking on tender shoots.",
+          "first_response": "Early scouting and weed control."
+        },
+        {
+          "pest": "Whitefly",
+          "symptoms": "Leaf yellowing and virus spread.",
+          "first_response": "Use traps and remove alternate hosts."
+        },
+        {
+          "pest": "Pod borer",
+          "symptoms": "Bored pods and damaged seeds.",
+          "first_response": "Pheromone traps and stage-wise monitoring."
+        }
+      ],
+      "basis": "Pulse advisories."
+    },
+    "pea": {
+      "common_name": "Pea",
+      "top_pests": [
+        {
+          "pest": "Aphids",
+          "symptoms": "Curling and honeydew on tender shoots.",
+          "first_response": "Monitor early and avoid excess nitrogen."
+        },
+        {
+          "pest": "Pod borer",
+          "symptoms": "Bored pods and seed damage.",
+          "first_response": "Use traps and timely harvest."
+        },
+        {
+          "pest": "Leaf miner",
+          "symptoms": "Serpentine mines on leaves.",
+          "first_response": "Remove heavily infested foliage where practical."
+        }
+      ],
+      "basis": "Pea IPM guidance."
+    },
+    "fodder": {
+      "common_name": "Fodder crops",
+      "top_pests": [
+        {
+          "pest": "Aphids",
+          "symptoms": "Sap sucking and stunting.",
+          "first_response": "Monitor field borders and remove weed hosts."
+        },
+        {
+          "pest": "Armyworm",
+          "symptoms": "Rapid defoliation in patches.",
+          "first_response": "Scouting and early intervention."
+        },
+        {
+          "pest": "Cutworm",
+          "symptoms": "Seedling cutting near soil line.",
+          "first_response": "Tillage and residue management."
+        }
+      ],
+      "basis": "Generic fodder pest profile."
+    },
+    "tobacco": {
+      "common_name": "Tobacco",
+      "top_pests": [
+        {
+          "pest": "Whitefly",
+          "symptoms": "Yellowing and virus spread.",
+          "first_response": "Avoid excess nitrogen and monitor with traps."
+        },
+        {
+          "pest": "Aphids",
+          "symptoms": "Leaf curling and honeydew.",
+          "first_response": "Scout weekly and conserve natural enemies."
+        },
+        {
+          "pest": "Tobacco caterpillar",
+          "symptoms": "Defoliation and webbing.",
+          "first_response": "Hand pick early larvae and use local advisory."
+        }
+      ],
+      "basis": "Tobacco crop advisories."
+    },
+    "cumin": {
+      "common_name": "Cumin",
+      "top_pests": [
+        {
+          "pest": "Aphids",
+          "symptoms": "Sap sucking and curling of shoots.",
+          "first_response": "Early monitoring and weed control."
+        },
+        {
+          "pest": "Thrips",
+          "symptoms": "Leaf distortion and flower damage.",
+          "first_response": "Use scouting and avoid stress."
+        },
+        {
+          "pest": "Semilooper",
+          "symptoms": "Leaf feeding and defoliation.",
+          "first_response": "Field scouting and local IPM advice."
+        }
+      ],
+      "basis": "Cumin pest guidance."
+    },
+    "rajma": {
+      "common_name": "Rajma / kidney bean",
+      "top_pests": [
+        {
+          "pest": "Aphids",
+          "symptoms": "Leaf curling and honeydew.",
+          "first_response": "Scout early and avoid excess nitrogen."
+        },
+        {
+          "pest": "Pod borer",
+          "symptoms": "Bored pods and damaged seeds.",
+          "first_response": "Use traps and timely harvesting."
+        },
+        {
+          "pest": "Leaf miner",
+          "symptoms": "Mined leaves and reduced canopy.",
+          "first_response": "Remove infested foliage where practical."
+        }
+      ],
+      "basis": "Bean crop IPM."
+    },
+    "ragi": {
+      "common_name": "Ragi / finger millet",
+      "top_pests": [
+        {
+          "pest": "Shoot fly",
+          "symptoms": "Dead hearts in seedlings.",
+          "first_response": "Timely sowing and good crop establishment."
+        },
+        {
+          "pest": "Stem borer",
+          "symptoms": "Stem tunneling and dead hearts.",
+          "first_response": "Scout and destroy infested plants."
+        },
+        {
+          "pest": "Aphids",
+          "symptoms": "Leaf curling and honeydew.",
+          "first_response": "Monitor and balance nutrition."
+        }
+      ],
+      "basis": "Millet IPM guidance."
+    },
+    "guar": {
+      "common_name": "Guar / cluster bean",
+      "top_pests": [
+        {
+          "pest": "Aphids",
+          "symptoms": "Curling and honeydew.",
+          "first_response": "Early monitoring and weed control."
+        },
+        {
+          "pest": "Pod borer",
+          "symptoms": "Bored pods and seed damage.",
+          "first_response": "Use pheromone traps and timely intervention."
+        },
+        {
+          "pest": "Whitefly",
+          "symptoms": "Yellowing and virus spread.",
+          "first_response": "Use sticky traps and sanitation."
+        }
+      ],
+      "basis": "Guar advisories."
+    },
+    "moth_bean": {
+      "common_name": "Moth bean",
+      "top_pests": [
+        {
+          "pest": "Aphids",
+          "symptoms": "Curling and stunting.",
+          "first_response": "Monitor early and control weeds."
+        },
+        {
+          "pest": "Pod borer",
+          "symptoms": "Pod feeding and seed loss.",
+          "first_response": "Use traps and stage-wise scouting."
+        },
+        {
+          "pest": "Whitefly",
+          "symptoms": "Yellowing and virus spread.",
+          "first_response": "Use traps and avoid excess nitrogen."
+        }
+      ],
+      "basis": "Desert pulse advisories."
+    },
+    "oilseeds": {
+      "common_name": "Oilseeds (group)",
+      "top_pests": [
+        {
+          "pest": "Aphids",
+          "symptoms": "Sap sucking and curling.",
+          "first_response": "Scout and manage weeds."
+        },
+        {
+          "pest": "Leaf miner",
+          "symptoms": "Mining of leaves.",
+          "first_response": "Monitor and use crop-specific IPM."
+        },
+        {
+          "pest": "Cutworm",
+          "symptoms": "Seedling cutting.",
+          "first_response": "Residue management and soil tillage."
+        }
+      ],
+      "basis": "Generic oilseed fallback profile."
+    },
+    "spices": {
+      "common_name": "Spices (group)",
+      "top_pests": [
+        {
+          "pest": "Thrips",
+          "symptoms": "Sucking damage and distortion.",
+          "first_response": "Use crop-specific monitoring."
+        },
+        {
+          "pest": "Shoot borer",
+          "symptoms": "Dead hearts / shoot damage.",
+          "first_response": "Remove infested shoots and maintain sanitation."
+        },
+        {
+          "pest": "Scale / mealybug",
+          "symptoms": "Sticky honeydew and stunted growth.",
+          "first_response": "Inspect regularly and manage ants / sanitation."
+        }
+      ],
+      "basis": "Generic spice fallback profile."
+    },
+    "millets": {
+      "common_name": "Millets (group)",
+      "top_pests": [
+        {
+          "pest": "Shoot fly",
+          "symptoms": "Dead hearts in seedlings.",
+          "first_response": "Timely sowing and resistant varieties."
+        },
+        {
+          "pest": "Stem borer",
+          "symptoms": "Stem tunneling and dead hearts.",
+          "first_response": "Scout and destroy infested plants."
+        },
+        {
+          "pest": "Aphids",
+          "symptoms": "Sap sucking and honeydew.",
+          "first_response": "Monitor and keep nutrition balanced."
+        }
+      ],
+      "basis": "Generic millet fallback profile."
+    },
+    "pulses": {
+      "common_name": "Pulses (group)",
+      "top_pests": [
+        {
+          "pest": "Aphids",
+          "symptoms": "Sap sucking and stunting.",
+          "first_response": "Scout early and control weeds."
+        },
+        {
+          "pest": "Pod borer",
+          "symptoms": "Bored pods and seed damage.",
+          "first_response": "Use pheromone traps and timely intervention."
+        },
+        {
+          "pest": "Whitefly",
+          "symptoms": "Yellowing and virus spread.",
+          "first_response": "Use sticky traps and sanitation."
+        }
+      ],
+      "basis": "Generic pulse fallback profile."
+    }
+  },
+  "crop_aliases": {
+    "gram": "chickpea",
+    "arhar": "pigeonpea",
+    "tur": "pigeonpea",
+    "bajra": "pearl_millet",
+    "jowar": "sorghum",
+    "til": "sesame",
+    "paddy": "rice"
+  },
+  "source_catalog": [
+    {
+      "name": "PMFBY Crop Calendar PDF",
+      "url": "https://pmfby.gov.in/pdf/New_Crop_Calendar_20.09.18.pdf",
+      "use": "Season and crop calendar structure by state/district."
+    },
+    {
+      "name": "ICAR Rice IPM Bulletin",
+      "url": "https://icar-ciwa.org.in/gks/Downloads/Technical%20Bulletins/DRWA%20Rice%20Bulletin%20Final.pdf",
+      "use": "Rice pest set: stem borer, leaf folder, brown planthopper."
+    },
+    {
+      "name": "NIPHM Rice IPM Package",
+      "url": "https://www.niphm.gov.in/IPMPackages/Rice.pdf",
+      "use": "Rice pest management framework and multiple-season rice context."
+    },
+    {
+      "name": "ICAR Mustard Pest Article",
+      "url": "https://epubs.icar.org.in/index.php/JOB/article/view/157477",
+      "use": "Mustard aphid, sawfly, painted bug."
+    },
+    {
+      "name": "ICAR Cotton PBW Management",
+      "url": "https://icar.org.in/sites/default/files/Circulars/PBW-Management-strategies-2019.pdf",
+      "use": "Cotton whitefly/aphid risk and pink bollworm advisory."
+    },
+    {
+      "name": "PPQS Fall Armyworm Advisory",
+      "url": "https://ppqs.gov.in/sites/default/files/faw_advisory0001.pdf",
+      "use": "Maize fall armyworm advisory."
+    },
+    {
+      "name": "NIPHM Soybean IPM Package",
+      "url": "https://www.niphm.gov.in/IPMPackages/Soyabean.pdf",
+      "use": "Soybean girdle beetle and semilooper."
+    },
+    {
+      "name": "ICAR-IIGR Groundnut IPM",
+      "url": "https://www.icar-iigr.org.in/wp-content/uploads/2021/10/Integrated-Pest-Management-in-Groundnut.pdf",
+      "use": "Groundnut pests such as thrips, jassids and leaf miner."
+    },
+    {
+      "name": "PPQS Pesticide Uses Table",
+      "url": "https://ppqs.gov.in/sites/default/files/major_uses_of_pesticides_insecticides_as_on_31.03.2024.pdf",
+      "use": "Quick crop-pest validation for rice, cotton, pigeonpea, onion, chickpea and groundnut."
+    }
+  ]
+}

@@ -1,0 +1,98 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: var(--font-manrope);
+  --font-display: var(--font-fraunces);
+}
+
+@theme {
+  /* KrishiSense palette — warm agricultural neutrals + field greens */
+  --color-husk: #f4f1e6;
+  --color-card: #fdfcf7;
+  --color-line: #e2ddc9;
+  --color-linesoft: #ece8d8;
+  --color-ink: #242a20;
+  --color-inksoft: #5c6354;
+  --color-inkfaint: #8a8f7e;
+  --color-leaf: #2d6a3f;
+  --color-leafdeep: #16351f;
+  --color-leafdark: #1e4a2c;
+  --color-sprout: #8fbf6f;
+  --color-sproutsoft: #e9f1df;
+  --color-soil: #9a6a3c;
+  --color-soilsoft: #f3e9dc;
+  --color-harvest: #d9992b;
+  --color-harvestsoft: #faf0d8;
+  --color-clay: #be4b2d;
+  --color-claysoft: #f8e4dc;
+  --color-sky: #46708f;
+  --color-skysoft: #e3ecf2;
+
+  --animate-rise: rise 0.45s ease both;
+  --animate-rise-1: rise 0.45s 0.06s ease both;
+  --animate-rise-2: rise 0.45s 0.12s ease both;
+  --animate-rise-3: rise 0.45s 0.18s ease both;
+
+  @keyframes rise {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -400px 0;
+  }
+  100% {
+    background-position: 400px 0;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-husk);
+  color: var(--color-ink);
+  font-family: var(--font-sans), ui-sans-serif, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: #cfe3c0;
+}
+
+.skeleton {
+  background: linear-gradient(90deg, #ece8da 25%, #f6f3e9 50%, #ece8da 75%);
+  background-size: 800px 100%;
+  animation: shimmer 1.4s infinite linear;
+}
+
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+/* subtle scrollbars */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #c9c3ac transparent;
+}
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+*::-webkit-scrollbar-thumb {
+  background: #c9c3ac;
+  border-radius: 8px;
+}
+
+input[type="range"] {
+  accent-color: var(--color-leaf);
+}

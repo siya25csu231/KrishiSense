@@ -1,0 +1,234 @@
+=====================================================================
+ KRISHISENSE AI — COMPLETE SETUP GUIDE (from scratch, step by step)
+ Explainable Smart Crop Advisory & Farm Intelligence Platform
+=====================================================================
+
+This file walks you through EVERYTHING: installing tools, getting the
+code, setting up the database, API keys (most need NONE), running the
+app, running the Python ML pipeline, and deploying for free.
+
+---------------------------------------------------------------------
+ SECTION 0 — WHAT THIS PROJECT IS
+---------------------------------------------------------------------
+KrishiSense AI is a fullstack web application:
+  • Frontend + API : Next.js (React) + TypeScript + Tailwind CSS
+  • Database       : PostgreSQL (via Drizzle ORM)
+  • ML             : crop model (k-NN + comparison models) computed
+                     from the REAL dataset at server start; an
+                     equivalent Python/scikit-learn training script
+                     ships in scripts/train_crop_model.py
+  • External APIs  : Open-Meteo weather (NO key), OpenStreetMap
+                     Nominatim geocoding (NO key)
+
+All datasets come from the reference repository
+7H-ANKUR/CROP-ADVISORY-SIH25010 (GPL-3.0) and are already bundled
+inside the `datasets/` folder of this project. You do not need to
+download them again.
+
+---------------------------------------------------------------------
+ SECTION 1 — INSTALL PREREQUISITES (one-time)
+---------------------------------------------------------------------
+1. Install Node.js (version 20 or newer)
+     Windows : go to https://nodejs.org → download LTS → run installer
+     Mac     : https://nodejs.org  OR  `brew install node`
+     Linux   : curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
+               sudo apt-get install -y nodejs
+     Verify  : open a terminal and run:
+                 node -v      (should print v20.x or newer)
+                 npm -v
+
+2. Install Git
+     Windows : https://git-scm.com/download/win
+     Mac     : `brew install git`
+     Linux   : sudo apt-get install git
+     Verify  : git --version
+
+3. Install Python 3.10+ (only needed for the academic ML script)
+     https://www.python.org/downloads/
+     Verify : python --version
+
+4. Install PostgreSQL (a database)
+     EASIEST option  : use Supabase (free cloud database, see §4-B)
+     LOCAL option    : https://www.postgresql.org/download/
+                       During install remember the password you set.
+     Verify : psql --version
+
+---------------------------------------------------------------------
+ SECTION 2 — GET THE PROJECT CODE
+---------------------------------------------------------------------
+Option A (you received a ZIP): unzip it, open a terminal INSIDE the folder.
+Option B (git):
+     git clone <your-repo-url> KrishiSense-AI
+     cd KrishiSense-AI
+
+Folder layout you should see:
+     datasets/        all CSV/JSON datasets (from the reference repo)
+     scripts/         Python ML training script
+     src/             application source (pages, API, ML engine, DB)
+     setup.txt        this file
+     architecture.txt deep technical + pitch documentation
+     .env.example     environment template
+
+---------------------------------------------------------------------
+ SECTION 3 — INSTALL DEPENDENCIES
+---------------------------------------------------------------------
+In the project folder run:
+     npm install
+This installs Next.js, React, Drizzle ORM, bcrypt, lucide icons, etc.
+
+---------------------------------------------------------------------
+ SECTION 4 — DATABASE SETUP (choose ONE option)
+---------------------------------------------------------------------
+A) LOCAL PostgreSQL (simplest for college demo)
+   1. Start PostgreSQL service (automatic on Windows installer).
+   2. Create the database (terminal):
+        psql -U postgres -c "CREATE DATABASE app_db;"
+      (enter your postgres password when asked)
+   3. Copy the env template:
+        Windows : copy .env.example .env
+        Mac/Linux: cp .env.example .env
+   4. Open .env and set:
+        DATABASE_URL=postgresql://postgres:YOUR_PASSWORD@127.0.0.1:5432/app_db
+
+B) SUPABASE (free cloud — no local install needed)
+   1. Go to https://supabase.com → sign up (free).
+   2. "New project" → pick name (e.g. krishisense) + DB password.
+   3. Wait for it to provision, then open
+        Project Settings → Database → Connection string (URI).
+   4. Paste that string into .env as DATABASE_URL.
+      (No service-role key is needed — the app connects directly
+       with the connection string, and the anon key is only needed
+       if you later use Supabase Auth instead of the built-in auth.)
+
+C) ALREADY PROVISIONED ENVIRONMENT
+   If your environment already provides DATABASE_URL (this sandbox
+   does), skip everything above — .env already exists.
+
+---------------------------------------------------------------------
+ SECTION 5 — API KEYS: WHAT YOU NEED (almost nothing!)
+---------------------------------------------------------------------
+• Weather — Open-Meteo        → NO KEY NEEDED. Free, no signup.
+                                 Docs: https://open-meteo.com/en/docs
+• Geocoding — Nominatim (OSM) → NO KEY NEEDED. Usage policy: max
+                                 1 request/second, cached 24h in
+                                 this app automatically.
+• Crop recommendation model   → NO KEY. Trained from the bundled
+                                 CSV at server start.
+• Market prices               → NO KEY. Bundled agmarknet dataset.
+• Pest/fertilizer advisors    → NO KEY. Bundled knowledge bases +
+                                 transparent rule engines.
+• Disease screening           → NO KEY. Runs in the browser.
+
+OPTIONAL (never required):
+• GEMINI_API_KEY  — only if you later add an optional LLM adapter.
+                    Get one at https://aistudio.google.com/apikey
+• GOOGLE_CLIENT_ID — optional Google sign-in. Get it at
+                    https://console.cloud.google.com/apis/credentials
+                    (create OAuth client ID → Web application).
+The app runs 100% without these. Empty optional variables are ignored.
+
+---------------------------------------------------------------------
+ SECTION 6 — CREATE DATABASE TABLES
+---------------------------------------------------------------------
+Run once (and again if src/db/schema.ts changes):
+     npx drizzle-kit push
+This reads src/db/schema.ts and creates the tables:
+users, sessions, fields, predictions, saved_advisories, alerts,
+posts, comments.
+
+---------------------------------------------------------------------
+ SECTION 7 — RUN THE APPLICATION
+---------------------------------------------------------------------
+Development mode:
+     npm run dev
+Then open http://localhost:3000
+
+Production build:
+     npm run build
+     npm start
+Then open http://localhost:3000
+
+FIRST STEPS IN THE APP:
+  1. Landing page → "Start Farm Analysis" (register) OR
+     "Explore Platform" → login page → "Explore the live demo farm"
+     (one-click demo account: demo@krishisense.in / demo1234).
+  2. Add a field (Fields page): soil N/P/K/pH + location → click
+     "Locate" to fetch coordinates from OpenStreetMap.
+  3. Crop Intelligence → Analyze Field → see recommendation,
+     WHY it was recommended, alternatives, then try the What-If tab.
+  4. Disease Scan → upload any leaf JPG/PNG.
+  5. Weather / Market / Yield / Profit / Rotation / Alerts pages.
+
+---------------------------------------------------------------------
+ SECTION 8 — PYTHON ML PIPELINE (for the academic report)
+---------------------------------------------------------------------
+The web app recomputes model evaluation at server start. The SAME
+methodology can be run in Python for your report/notebook:
+
+     pip install pandas numpy scikit-learn joblib matplotlib
+     python scripts/train_crop_model.py
+
+What it does (printed to console):
+  • dataset inspection (missing values, duplicates, class balance)
+  • 80/20 stratified split with seed 20250925 (same as the app)
+  • trains k-NN, Decision Tree, Random Forest, Gaussian Naive Bayes
+  • accuracy / macro precision / recall / F1 comparison table
+  • confusion matrix + classification report
+  • permutation feature importance (explainability)
+  • saves models/crop/crop_model.joblib + MODEL_CARD.md
+
+To use it in Jupyter: paste the sections of that script into cells of
+notebooks/04_crop_recommendation.ipynb — every section header in the
+script matches a notebook chapter (dataset → EDA → training →
+comparison → explainability → results).
+
+---------------------------------------------------------------------
+ SECTION 9 — TESTING THE API MANUALLY
+---------------------------------------------------------------------
+With `npm run dev` running:
+  curl http://localhost:3000/api/health
+  curl -X POST http://localhost:3000/api/recommend \
+       -H "Content-Type: application/json" \
+       -d '{"N":90,"P":42,"K":43,"temperature":21,"humidity":82,"ph":6.5,"rainfall":203}'
+  curl "http://localhost:3000/api/weather?lat=28.4&lon=77.3"
+  curl http://localhost:3000/api/market
+  curl http://localhost:3000/api/models      # live evaluation table
+
+---------------------------------------------------------------------
+ SECTION 10 — DEPLOYMENT (free tiers)
+---------------------------------------------------------------------
+A) VERCEL (frontend + API together — simplest)
+   1. Push the project to GitHub.
+   2. https://vercel.com → New Project → import the repo.
+   3. Framework auto-detected: Next.js.
+   4. Environment variable: DATABASE_URL (Supabase connection string).
+   5. Deploy. Vercel runs `next build` automatically.
+
+B) SUPABASE — already your database if you chose option 4-B.
+
+C) RENDER (only if you later split a Python FastAPI backend)
+   1. https://render.com → New → Web Service → repo.
+   2. Build: pip install -r requirements.txt
+      Start: uvicorn api.main:app --host 0.0.0.0 --port $PORT
+   3. Env vars: SUPABASE_URL, SUPABASE_ANON_KEY, JWT_SECRET.
+
+---------------------------------------------------------------------
+ SECTION 11 — TROUBLESHOOTING
+---------------------------------------------------------------------
+• "DATABASE_URL is required"
+      → create .env from .env.example and fill DATABASE_URL.
+• relation "users" does not exist
+      → run: npx drizzle-kit push
+• Weather card says unavailable
+      → outbound network is blocked; the app falls back to cache and
+        shows a clear message — everything else still works.
+• Port 3000 busy
+      → npm run dev -- -p 3001
+• Models slow on first request
+      → the engine trains/evaluates once per process (a few seconds),
+        then every prediction is in-memory and instant.
+
+=====================================================================
+That's it. Run `npm install`, set DATABASE_URL, `npx drizzle-kit push`,
+`npm run dev`, open http://localhost:3000 and click "demo login".
+=====================================================================

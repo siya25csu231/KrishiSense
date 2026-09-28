@@ -1,0 +1,90 @@
+{
+  "meta": {
+    "name": "Organic Fertilizer Lookup for Low NPK",
+    "version": "1.0",
+    "purpose": "Return two natural fertilizer options when soil N, P, or K is low",
+    "note": "Approximate costs vary by city, scale, and whether the fertilizer is homemade or purchased.",
+    "default_thresholds": {
+      "low_n": {
+        "condition": "N < 50",
+        "unit": "mg/kg or dataset-specific units"
+      },
+      "low_p": {
+        "condition": "P < 30",
+        "unit": "mg/kg or dataset-specific units"
+      },
+      "low_k": {
+        "condition": "K < 30",
+        "unit": "mg/kg or dataset-specific units"
+      }
+    }
+  },
+  "rules": [
+    {
+      "nutrient": "N",
+      "when_low": "nitrogen is low",
+      "recommendations": [
+        {
+          "name": "Vermicompost",
+          "type": "organic manure",
+          "approx_cost_inr_per_kg": "₹6–₹20",
+          "why": "Improves nitrogen availability and soil structure.",
+          "prep_mode": "homemade or purchased"
+        },
+        {
+          "name": "Cow dung compost / manure",
+          "type": "organic manure",
+          "approx_cost_inr_per_kg": "₹10–₹30",
+          "why": "Adds organic matter and slow-release nitrogen.",
+          "prep_mode": "homemade or purchased"
+        }
+      ]
+    },
+    {
+      "nutrient": "P",
+      "when_low": "phosphorus is low",
+      "recommendations": [
+        {
+          "name": "Bone meal",
+          "type": "natural phosphorus source",
+          "approx_cost_inr_per_kg": "₹18–₹25",
+          "why": "Rich in phosphorus and calcium for root growth.",
+          "prep_mode": "purchased or locally prepared"
+        },
+        {
+          "name": "Rock phosphate",
+          "type": "natural mineral fertilizer",
+          "approx_cost_inr_per_kg": "₹3–₹16",
+          "why": "Slow-release phosphorus source for long-term soil improvement.",
+          "prep_mode": "purchased"
+        }
+      ]
+    },
+    {
+      "nutrient": "K",
+      "when_low": "potassium is low",
+      "recommendations": [
+        {
+          "name": "Wood ash",
+          "type": "homemade potassium source",
+          "approx_cost_inr_per_kg": "₹0–₹2",
+          "why": "Contains potassium and some phosphorus/calcium; use only clean wood ash.",
+          "prep_mode": "homemade"
+        },
+        {
+          "name": "Neem cake",
+          "type": "organic amendment",
+          "approx_cost_inr_per_kg": "₹15–₹30",
+          "why": "Organic input with some NPK and natural pest-suppressing value.",
+          "prep_mode": "purchased"
+        }
+      ]
+    }
+  ],
+  "safety_and_usage_notes": [
+    "Use wood ash carefully on alkaline soils because it can raise pH.",
+    "Do not mix wood ash directly with urea or ammonium-based fertilizers.",
+    "Always verify soil test values before applying any amendment.",
+    "These are advisory suggestions, not a replacement for district agriculture guidance."
+  ]
+}

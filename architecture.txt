@@ -1,0 +1,345 @@
+=====================================================================
+ KRISHISENSE AI — ARCHITECTURE & PITCH DOCUMENT
+ Explainable Smart Crop Advisory & Farm Intelligence Platform
+ (based on SIH25010 · reference: 7H-ANKUR/CROP-ADVISORY-SIH25010)
+=====================================================================
+
+ 1. ELEVATOR PITCH
+---------------------------------------------------------------------
+Small farmers must combine soil chemistry, weather, season, pest risk
+and market prices to choose a crop — but each of these lives in a
+different silo, and most advisory tools output a bare label with no
+reasoning.
+
+KrishiSense AI unifies them into ONE farm intelligence command center
+and, crucially, EXPLAINS every recommendation:
+
+   WHAT  → Recommended crop: Rice (91% suitability)
+   WHY   → factor checks vs the learned crop profile + permutation
+           feature-importance bars straight from the real model
+   WHAT-IF → drag a rainfall slider and watch the model re-rank live
+
+It is free-first: weather (Open-Meteo) and geocoding (OpenStreetMap)
+need zero API keys; market, pest and fertilizer intelligence run on
+bundled real datasets and transparent rule engines.
+
+ 2. SYSTEM ARCHITECTURE (high level)
+---------------------------------------------------------------------
+                        Browser (React / Next.js pages)
+                                   │  fetch JSON
+                                   ▼
+   ┌───────────────────────────────────────────────────────────────┐
+   │  NEXT.JS APPLICATION SERVER (Node.js)                         │
+   │                                                               │
+   │  /api/auth /api/fields /api/recommend /api/disease …          │
+   │        │          │           │           │                   │
+   │        ▼          ▼           ▼           ▼                   │
+   │  ┌─────────┐ ┌─────────┐ ┌──────────┐ ┌───────────────┐       │
+   │  │ auth.ts │ │ ml.ts   │ │services  │ │ datasets.ts   │       │
+   │  │ bcrypt  │ │ kNN+DT+ │ │ weather  │ │ CSV/JSON      │       │
+   │  │ sessions│ │ Forest+ │ │ market   │ │ loaders +     │       │
+   │  └────┬────┘ │ GNB +   │ │ pests    │ │ memory cache  │       │
+   │       │      │ explain │ │ yield    │ └──────┬────────┘       │
+   │       │      └────┬────┘ │ rotation │        │                │
+   │       │           │      │ profit   │        │                │
+   │       │           │      │ assistant│        │                │
+   │       │           │      └────┬─────┘        │                │
+   └───────┼───────────┼───────────┼──────────────┼────────────────┘
+           ▼           ▼           ▼              ▼
+      PostgreSQL   trained in   Open-Meteo     datasets/ folder
+      (Drizzle)    memory at    Nominatim      (Crop_recommendation.csv,
+                   startup      (cached)        agmarknet prices,
+                                                 pest KB, fertilizer data,
+                                                 state crop guidance)
+
+Nothing fake: every score shown in the UI comes from a computation
+that exists in code — models are evaluated live, rules are visible.
+
+ 3. WHAT HAPPENS ON EVERY REQUEST (end-to-end flows)
+---------------------------------------------------------------------
+FLOW A — Crop recommendation (POST /api/recommend)
+  1. Browser sends {N, P, K, temperature, humidity, ph, rainfall}
+  2. Server validates ranges (pH 0–14, humidity ≤ 100, rain ≥ 0 …)
+     → invalid values return HTTP 400 with a human-readable message.
+  3. ml.ts loads Crop_recommendation.csv (once per process, cached),
+     standardizes the input with the training scaler, and runs
+     distance-weighted k-NN (k=9) against 1,760 training rows.
+  4. Class votes → suitability score + top-3 alternatives.
+  5. Explanation layer:
+       • each feature is compared to the recommended crop's learned
+         profile (mean ± σ computed from the dataset) → positive /
+         limiting factors in plain language;
+       • global permutation importance (accuracy drop when each
+         feature is shuffled on the holdout) weights the bars;
+       • contribution = importance × alignment, normalized.
+  6. The prediction is logged into the `predictions` table (history).
+  7. JSON response → UI renders gauge, WHY cards, contribution bars,
+     alternatives, and offers "Save advisory".
+
+FLOW B — What-If simulation (POST /api/recommend with whatIf)
+  Same engine runs twice (original inputs + modified inputs), diffs
+  the rankings, and generates a narrative sentence:
+  "Changing rainfall from 182 mm to 110 mm altered the model's
+   ranking: Rice (91%) gives way to Maize (86%)."
+
+FLOW C — Disease scan (POST /api/disease)
+  1. Browser draws the uploaded image into a 128×128 canvas
+     (files validated: JPG/PNG only, ≤ 10 MB).
+  2. A colour histogram is computed LOCALLY: green/yellow/brown/dark
+     fractions, saturation, brightness, hue spread, and a spot score
+     (variance of lesion-coloured pixels across 16 tiles).
+  3. Only the numbers are sent to the server — no image upload.
+  4. services.detectDisease compares the signature against curated
+     class signatures (healthy, early/late blight, rust, mildew,
+     bacterial blight, mosaic virus, leaf spot) and returns the best
+     match, confidence label, symptoms, cause, prevention, management
+     and honest disclaimer. This is clearly labelled a HEURISTIC
+     SCREENING AID — never claimed to be a CNN.
+
+FLOW D — Weather (GET /api/weather?lat&lon)
+  1. Server calls Open-Meteo forecast API (current + 7-day daily).
+  2. Result cached 15 minutes per rounded coordinate (rate-limit
+     friendly). On failure → serves last cached copy with timestamp,
+     or a friendly error card. Never a crash.
+  3. Rule layer converts forecast into advisories: heavy-rain
+     drainage warning, skip-irrigation notice, heat stress watch,
+     dry-week planning.
+  Geocoding (search a city → lat/lon) goes through Nominatim with a
+  24-hour cache and an identifying User-Agent, per OSM policy.
+
+FLOW E — Market (GET /api/market, POST /api/market)
+  Bundled agmarknet 2024–25 dataset → national monthly averages per
+  commodity → linear regression trend → 3-month planning estimate.
+  The UI always says "latest available data — not a live feed".
+
+FLOW F — Yield (POST /api/agro tool=yield)
+  Reference yields (public statistics, documented) are multiplied by
+  transparent suitability factors (rainfall fit, temperature fit,
+  pH fit vs the crop's learned profile). Output is an ESTIMATE with
+  its assumptions listed one by one.
+
+FLOW G — Fertilizer (tool=fertilizer) & Pests (tool=pests)
+  Rule-based — and labelled as such. Fertilizer flags low/adequate/
+  high N-P-K against target bands and pulls organic options from the
+  bundled organic-fertilizer lookup. Pest alerts combine the bundled
+  ICAR-based pest knowledge base (45 crops) with weather conditions
+  (warm + humid → HIGH fungal risk, with the reason printed).
+
+FLOW H — Rotation (tool=rotation)
+  Family-aware planner: cereal → legume (biological nitrogen
+  fixation), legume → cereal, same-family repetition warning.
+  Generates a 4-season timeline with the WHY for every step.
+
+FLOW I — Profit (tool=profit)
+  Revenue = yield × 10 × price/quintal; costs summed; margin, margin
+  %, profit/acre and breakeven yield computed. Market context is
+  injected from the latest bundled mandi price. Everything labelled
+  "estimate".
+
+FLOW J — Smart alerts (GET /api/alerts)
+  Aggregates: weather forecast (heavy rain / heat / dry week), pest
+  rules for the field's current crop, market movements (±% over
+  3 months). Each alert gets a stable dedupe key (category+date) and
+  is stored per user with severity critical/high/medium/low.
+
+FLOW K — Auth & persistence
+  Register/login: bcrypt-hashed passwords; session token (32 random
+  bytes, httpOnly cookie, 30 days) stored in the `sessions` table →
+  sessions survive restarts. Demo account (demo@krishisense.in /
+  demo1234) seeds itself with 2 fields + community posts.
+
+ 4. COMPLETE API SURFACE
+---------------------------------------------------------------------
+  GET  /api/health                  liveness + DB check
+  GET  /api/auth                    current user
+  POST /api/auth                    register | login | logout | demo
+  GET  /api/fields                  list my fields
+  POST /api/fields                  create field (validated)
+  GET  /api/fields/{id}             one field
+  PUT  /api/fields/{id}             update field
+  DELETE /api/fields/{id}           delete field
+  POST /api/recommend               crop recommendation (+ whatIf)
+  POST /api/disease                 leaf colour-signature screening
+  GET  /api/weather?lat&lon         Open-Meteo bundle + advisories
+  GET  /api/weather?action=geocode  Nominatim search (India)
+  GET  /api/market                  all-commodity snapshot
+  POST /api/market                  commodity detail + forecast
+  POST /api/agro                    tools: yield | fertilizer | pests
+                                    | rotation | profit | season
+  GET  /api/alerts                  compute + list smart alerts
+  POST /api/alerts                  dismiss alert
+  GET  /api/community               posts with comment counts
+  POST /api/community               create post
+  GET  /api/community/{id}          post + comments
+  POST /api/community/{id}          comment
+  PATCH /api/community/{id}         report post
+  GET  /api/history                 prediction history
+  GET  /api/history?saved=1         saved advisories
+  POST /api/history                 save advisory
+  DELETE /api/history?id=           remove saved advisory
+  GET  /api/models                  live evaluation table + versions
+  POST /api/assistant               rule-based knowledge assistant
+  GET/PATCH /api/profile            profile read / update
+
+ 5. DATABASE SCHEMA (PostgreSQL via Drizzle ORM)
+---------------------------------------------------------------------
+  users            id, name, email, passwordHash, state, district,
+                   village, language, farmSizeAcres, soilType,
+                   preferredCrops, timestamps
+  sessions         token PK, userId→users, expiresAt
+  fields           id, userId→users, name, areaAcres, location,
+                   lat, lon, soilType, N, P, K, ph, currentCrop,
+                   previousCrop, season
+  predictions      id, userId, kind, title, summary, result JSONB
+  saved_advisories id, userId, title, kind, note, data JSONB
+  alerts           id, userId, key (unique per user), severity,
+                   category, title, message, dismissed
+  posts            id, userId, author, title, body, reports
+  comments         id, postId→posts, userId, author, body
+
+ 6. ML PIPELINE (academic-grade, reproducible)
+---------------------------------------------------------------------
+  Dataset    : datasets/Crop_recommendation.csv — 2,200 rows,
+               22 crops, features N/P/K/temperature/humidity/ph/
+               rainfall. Source: reference SIH repo (GPL-3.0).
+  Split      : 80/20 shuffle, fixed seed 20250925 (web app AND the
+               Python script use the SAME seed → identical numbers).
+  Models     : k-Nearest Neighbours (k=9, distance-weighted) PRIMARY
+               Decision Tree (CART, depth 8)
+               Random Forest-lite (11 bootstrap trees, 4 features)
+               Gaussian Naive Bayes
+  Metrics    : accuracy + macro precision/recall/F1 computed LIVE at
+               server start on the holdout — shown on Model Lab page.
+  Explainability:
+     global → permutation importance (accuracy drop per shuffled
+              feature, normalized)
+     local  → factor checks vs per-class learned profiles +
+              contribution bars (importance × alignment)
+  Model versions: every deployed model carries name/version/
+               algorithm/dataset/metrics (see /api/models).
+
+  Honest-labelling policy (built into the product):
+     • model scores are called "suitability", never "guarantee"
+     • market data is "latest available", never "live"
+     • fertilizer/rotation/pest modules are labelled RULE-BASED
+     • disease scan is labelled a SCREENING AID
+     • yield outputs are ESTIMATES with assumptions listed
+
+ 7. FEATURE-BY-FEATURE PITCH ("what does this do?")
+---------------------------------------------------------------------
+  Landing page ............ story of the product; hero, modules,
+                           how-it-works, explainability section,
+                           academic/dataset section.
+  Dashboard ............... "Your Farm Intelligence": weather, soil,
+                           recommendation, risk, market, alerts,
+                           assistant, history + decomposable Farm
+                           Health score (Soil 35% · Weather 25% ·
+                           Risk 20% · Market 20% — formula documented
+                           in code, farmHealth()).
+  Fields .................. CRUD for fields with soil values and
+                           OpenStreetMap coordinate lookup.
+  Crop Intelligence ....... the flagship: analyze + explain +
+                           alternatives + What-If simulator.
+  Disease Scan ............ photo → colour signature → condition +
+                           symptoms/cause/prevention/management.
+  Weather ................. live forecast + farm advisories +
+                           place search + browser geolocation.
+  Market .................. commodity cards, trend arrows, monthly
+                           chart with dashed forecast, signals table.
+  Yield ................... reference-adjusted estimate + transparent
+                           assumption list.
+  Profit Planner .......... revenue/cost/margin + donut cost
+                           structure + breakeven + market context.
+  Rotation ................ family-aware multi-season timeline with
+                           reasons; same-family warning.
+  Fertilizer .............. N-P-K/pH status cards, interpretation,
+                           organic options from bundled lookup.
+  Alerts .................. daily-aggregated priority feed with
+                           dismiss + "show dismissed".
+  Community ............... posts, comments, report button.
+  Schemes ................. PM-KISAN, PMFBY, KCC, Soil Health Card,
+                           e-NAM, RKVY with official portals.
+  History ................. every prediction logged + saved-advisory
+                           bookmarks.
+  Model Lab ............... live evaluation table, dataset facts,
+                           permutation importance chart, model
+                           versions — the academic chapter on screen.
+  Profile ................. location, language (English/हिन्दी),
+                           farm details.
+  Assistant ............... rule-based intent-matching knowledge bot
+                           (no external AI dependency).
+
+ 8. FRONTEND ARCHITECTURE
+---------------------------------------------------------------------
+  src/app/page.tsx                 landing
+  src/app/(login|register)         auth pages
+  src/app/app/layout.tsx           session gate + AppShell
+  src/app/app/<module>/page.tsx    16 module pages
+  src/components/ui.tsx            Card, Button, Badge, inputs,
+                                   Skeleton, Empty/Error states…
+  src/components/charts.tsx        hand-rolled SVG charts (line/area,
+                                   bars, gauge, donut, sparkline)
+  src/components/layout.tsx        sidebar + topbar + mobile drawer
+                                   + bottom nav (i18n-aware)
+  src/lib/api.ts                   ONE centralized API client with
+                                   typed services + error handling
+  src/lib/i18n.tsx                 English/Hindi dictionaries,
+                                   extensible to 10 more languages
+
+  Loading: every async screen has skeletons; every fetch has an
+  error state with retry; empty states guide the next action.
+
+ 9. SECURITY & DATA POLICY
+---------------------------------------------------------------------
+  • Passwords: bcrypt (cost 10). Never stored in plain text.
+  • Sessions: random 256-bit tokens, httpOnly cookies, expiry.
+  • Field/history data is always filtered by the session's user id.
+  • All numeric inputs validated server-side (impossible values
+    rejected: pH 15, humidity 140%, negative rainfall …).
+  • Image uploads: type + size validated; only numeric colour
+    statistics cross the wire.
+  • No secrets in the browser bundle; DATABASE_URL stays server-side.
+  • External calls: timeouts + caching (weather 15 min, geocode 24 h).
+
+10. PYTHON / FASTAPI EQUIVALENCE (for the college report)
+---------------------------------------------------------------------
+This sandbox implements the platform in Node.js/TypeScript so it
+runs as one deployable unit. The academic mapping to the PRD's
+FastAPI stack is 1:1:
+
+  apps/web React pages      ↔  src/app/**/page.tsx
+  api/main.py + routes.py   ↔  src/app/api/**/route.ts
+  api/ml_service.py         ↔  src/server/ml.ts
+  api/weather_service.py    ↔  services.getWeather / geocode
+  api/market_service.py     ↔  services.getMarketSnapshot
+  api/fertilizer_service.py ↔  services.fertilizerAdvice
+  api/pest_service.py       ↔  services.pestAlerts
+  api/planner_service.py    ↔  services.rotationPlan / profitPlan
+  api/disease_service.py    ↔  services.detectDisease
+  Supabase PostgreSQL       ↔  same PostgreSQL via Drizzle ORM
+  notebooks/ pipeline       ↔  scripts/train_crop_model.py
+                              (identical seed → identical metrics)
+
+11. PERFORMANCE NOTES
+---------------------------------------------------------------------
+  • Datasets parsed ONCE per process, cached in globalThis.
+  • Models evaluated once at first use; predictions are O(n) k-NN
+    over 1,760 points — milliseconds.
+  • Weather/geocode cached; market snapshot memoized.
+  • Charts are dependency-free SVG; no chart library shipped.
+  • Images lazy, landing is static, app pages stream-render.
+
+12. LIMITATIONS (stated, not hidden)
+---------------------------------------------------------------------
+  • Market module uses a bundled historical snapshot, not a live feed.
+  • Disease screening is a colour-signature heuristic — a real CNN
+    (PlantVillage-trained, exported to TFLite/ONNX) is documented as
+    the upgrade path.
+  • Yield reference values are approximate national statistics.
+  • Rule-based modules encode agronomic heuristics; they must be
+    validated with district agriculture officers for production use.
+
+=====================================================================
+ KrishiSense AI: FIELD → DATA → ANALYSIS → RECOMMENDATION →
+ EXPLANATION → SIMULATION → ACTION → MONITORING
+=====================================================================

@@ -1,0 +1,379 @@
+{
+  "Andaman and Nicobar": {
+    "climate": "Tropical, hot and humid with heavy rainfall",
+    "soil_types": ["Sandy soil", "Laterite soil"],
+    "major_seasons": ["Kharif", "Rabi"],
+    "top_crops": [
+      {"name": "Coconut", "season": "All year", "reason": "Ideal tropical island climate"},
+      {"name": "Black pepper", "season": "Kharif", "reason": "Thrives in humid tropical conditions"},
+      {"name": "Arecanut", "season": "All year", "reason": "Traditional plantation crop"},
+      {"name": "Paddy", "season": "Kharif", "reason": "High rainfall supports rice cultivation"},
+      {"name": "Banana", "season": "All year", "reason": "Tropical fruit, year-round production"},
+      {"name": "Ladies Finger", "season": "Kharif", "reason": "Suitable warm humid climate"}
+    ]
+  },
+  "Andhra Pradesh": {
+    "climate": "Tropical, hot summers with moderate to heavy rainfall",
+    "soil_types": ["Red soil", "Black soil", "Alluvial soil"],
+    "major_seasons": ["Kharif", "Rabi"],
+    "top_crops": [
+      {"name": "Paddy", "season": "Kharif/Rabi", "reason": "Largest rice-producing state"},
+      {"name": "Cotton", "season": "Kharif", "reason": "Major cash crop, black soil suitable"},
+      {"name": "Chillies", "season": "Kharif", "reason": "Guntur is chilli capital"},
+      {"name": "Sugarcane", "season": "All year", "reason": "Irrigation-supported cultivation"},
+      {"name": "Tomato", "season": "Rabi", "reason": "Large-scale vegetable production"},
+      {"name": "Bengal Gram", "season": "Rabi", "reason": "Major pulse crop"}
+    ]
+  },
+  "Assam": {
+    "climate": "Subtropical, heavy rainfall, humid",
+    "soil_types": ["Laterite soil", "Alluvial soil"],
+    "major_seasons": ["Kharif", "Rabi"],
+    "top_crops": [
+      {"name": "Rice", "season": "Kharif", "reason": "Staple food crop, abundant water"},
+      {"name": "Tea", "season": "All year", "reason": "World-famous Assam tea"},
+      {"name": "Jute", "season": "Kharif", "reason": "Traditional fibre crop"},
+      {"name": "Mustard", "season": "Rabi", "reason": "Important oilseed crop"},
+      {"name": "Potato", "season": "Rabi", "reason": "Cool season vegetable"},
+      {"name": "Wheat Atta", "season": "Rabi", "reason": "Winter crop in plains"}
+    ]
+  },
+  "Bihar": {
+    "climate": "Subtropical, hot summers, moderate rainfall",
+    "soil_types": ["Alluvial soil", "Clayey soils"],
+    "major_seasons": ["Kharif", "Rabi"],
+    "top_crops": [
+      {"name": "Rice", "season": "Kharif", "reason": "Major Kharif staple"},
+      {"name": "Wheat", "season": "Rabi", "reason": "Key Rabi cereal"},
+      {"name": "Maize", "season": "Kharif/Rabi", "reason": "Growing importance as feed crop"},
+      {"name": "Sugarcane", "season": "All year", "reason": "Major cash crop"},
+      {"name": "Potato", "season": "Rabi", "reason": "Major vegetable producer"},
+      {"name": "Lentil", "season": "Rabi", "reason": "Important pulse crop"}
+    ]
+  },
+  "Chattisgarh": {
+    "climate": "Tropical, moderate rainfall",
+    "soil_types": ["Clayey soils", "Red soil"],
+    "major_seasons": ["Kharif", "Rabi"],
+    "top_crops": [
+      {"name": "Paddy", "season": "Kharif", "reason": "Rice bowl of central India"},
+      {"name": "Wheat", "season": "Rabi", "reason": "Second major cereal"},
+      {"name": "Groundnut", "season": "Kharif", "reason": "Oilseed crop"},
+      {"name": "Dry Chillies", "season": "Kharif", "reason": "Spice cultivation"},
+      {"name": "Maize", "season": "Kharif", "reason": "Feed and food grain"},
+      {"name": "Soyabean", "season": "Kharif", "reason": "Important oilseed"}
+    ]
+  },
+  "Goa": {
+    "climate": "Tropical, heavy monsoon rainfall",
+    "soil_types": ["Laterite soil"],
+    "major_seasons": ["Kharif", "Rabi"],
+    "top_crops": [
+      {"name": "Arecanut", "season": "All year", "reason": "Major plantation crop"},
+      {"name": "Coconut", "season": "All year", "reason": "Tropical plantation"},
+      {"name": "Rice", "season": "Kharif", "reason": "Staple food crop"},
+      {"name": "Cashew", "season": "Rabi", "reason": "Famous Goan cashew"},
+      {"name": "Mango", "season": "Summer", "reason": "Alphonso mangoes"},
+      {"name": "Banana", "season": "All year", "reason": "Year-round fruit"}
+    ]
+  },
+  "Gujarat": {
+    "climate": "Semi-arid to arid, low to moderate rainfall",
+    "soil_types": ["Desert soils", "Black soil", "Alluvial soil"],
+    "major_seasons": ["Kharif", "Rabi"],
+    "top_crops": [
+      {"name": "Cotton", "season": "Kharif", "reason": "Largest cotton producer in India"},
+      {"name": "Groundnut", "season": "Kharif", "reason": "Major oilseed crop"},
+      {"name": "Castor Seed", "season": "Kharif", "reason": "Largest castor producer"},
+      {"name": "Bajra", "season": "Kharif", "reason": "Drought-resistant millet"},
+      {"name": "Wheat", "season": "Rabi", "reason": "Major Rabi cereal"},
+      {"name": "Cumin", "season": "Rabi", "reason": "Major spice producer"}
+    ]
+  },
+  "Haryana": {
+    "climate": "Semi-arid, hot summers, cold winters",
+    "soil_types": ["Desert soil", "Alluvial soil"],
+    "major_seasons": ["Kharif", "Rabi"],
+    "top_crops": [
+      {"name": "Wheat", "season": "Rabi", "reason": "Top wheat-producing state"},
+      {"name": "Rice", "season": "Kharif", "reason": "Major Kharif crop"},
+      {"name": "Mustard", "season": "Rabi", "reason": "Important oilseed"},
+      {"name": "Sugarcane", "season": "All year", "reason": "Cash crop in irrigated areas"},
+      {"name": "Cotton", "season": "Kharif", "reason": "Northern cotton belt"},
+      {"name": "Potato", "season": "Rabi", "reason": "Winter vegetable"}
+    ]
+  },
+  "Himachal Pradesh": {
+    "climate": "Temperate to alpine, cold winters",
+    "soil_types": ["Sandy loam", "Mountain soil"],
+    "major_seasons": ["Kharif", "Rabi"],
+    "top_crops": [
+      {"name": "Apple", "season": "Rabi", "reason": "Famous Himachali apples"},
+      {"name": "Wheat", "season": "Rabi", "reason": "Major cereal in valleys"},
+      {"name": "Maize", "season": "Kharif", "reason": "Kharif food grain"},
+      {"name": "Potato", "season": "Rabi", "reason": "Cool climate ideal for potatoes"},
+      {"name": "Mushrooms", "season": "All year", "reason": "Cool climate specialty"},
+      {"name": "Ginger", "season": "Kharif", "reason": "Mountain spice crop"}
+    ]
+  },
+  "Jammu and Kashmir": {
+    "climate": "Temperate to cold, moderate rainfall",
+    "soil_types": ["Alluvial soil", "Mountain soil"],
+    "major_seasons": ["Kharif", "Rabi"],
+    "top_crops": [
+      {"name": "Apple", "season": "Summer", "reason": "World-famous Kashmiri apples"},
+      {"name": "Saffron", "season": "Rabi", "reason": "Exclusive Indian saffron region"},
+      {"name": "Rice", "season": "Kharif", "reason": "Valley rice cultivation"},
+      {"name": "Walnut", "season": "All year", "reason": "Major dry fruit"},
+      {"name": "Cauliflower", "season": "Rabi", "reason": "Cool climate vegetable"},
+      {"name": "Cucumber", "season": "Zaid", "reason": "Summer vegetable"}
+    ]
+  },
+  "Jharkhand": {
+    "climate": "Subtropical, moderate rainfall",
+    "soil_types": ["Red soil", "Laterite soil"],
+    "major_seasons": ["Kharif", "Rabi"],
+    "top_crops": [
+      {"name": "Rice", "season": "Kharif", "reason": "Major staple crop"},
+      {"name": "Wheat", "season": "Rabi", "reason": "Winter cereal"},
+      {"name": "Maize", "season": "Kharif", "reason": "Rainfed crop"},
+      {"name": "Vegetables", "season": "Rabi", "reason": "Various vegetables"},
+      {"name": "Pulses", "season": "Rabi", "reason": "Lentil, gram"},
+      {"name": "Potato", "season": "Rabi", "reason": "Cool season crop"}
+    ]
+  },
+  "Karnataka": {
+    "climate": "Tropical to semi-arid, varied rainfall",
+    "soil_types": ["Red soil", "Black soil", "Laterite soil"],
+    "major_seasons": ["Kharif", "Rabi"],
+    "top_crops": [
+      {"name": "Coffee", "season": "All year", "reason": "Largest coffee producer in India"},
+      {"name": "Rice", "season": "Kharif", "reason": "Coastal Karnataka staple"},
+      {"name": "Sugarcane", "season": "All year", "reason": "Major sugar producer"},
+      {"name": "Cotton", "season": "Kharif", "reason": "Northern Karnataka"},
+      {"name": "Maize", "season": "Kharif", "reason": "Growing feed crop"},
+      {"name": "Coconut", "season": "All year", "reason": "Coastal plantation"}
+    ]
+  },
+  "Kerala": {
+    "climate": "Tropical, heavy monsoon rainfall, very humid",
+    "soil_types": ["Sandy Clay loam", "Laterite soil"],
+    "major_seasons": ["Kharif", "Rabi"],
+    "top_crops": [
+      {"name": "Coconut", "season": "All year", "reason": "Land of coconuts"},
+      {"name": "Rubber", "season": "All year", "reason": "Largest rubber producer"},
+      {"name": "Black pepper", "season": "Kharif", "reason": "Spice garden of India"},
+      {"name": "Banana", "season": "All year", "reason": "Year-round tropical fruit"},
+      {"name": "Rice", "season": "Kharif", "reason": "Staple food, Kuttanad rice"},
+      {"name": "Ginger", "season": "Kharif", "reason": "Major spice crop"}
+    ]
+  },
+  "Madhya Pradesh": {
+    "climate": "Subtropical, moderate rainfall",
+    "soil_types": ["Black soil", "Red soil", "Alluvial soil"],
+    "major_seasons": ["Kharif", "Rabi"],
+    "top_crops": [
+      {"name": "Soyabean", "season": "Kharif", "reason": "Soya capital of India"},
+      {"name": "Wheat", "season": "Rabi", "reason": "Major Rabi cereal, top producer"},
+      {"name": "Cotton", "season": "Kharif", "reason": "Black soil cotton belt"},
+      {"name": "Paddy", "season": "Kharif", "reason": "Eastern MP rice belt"},
+      {"name": "Gram", "season": "Rabi", "reason": "Largest gram producer"},
+      {"name": "Mustard", "season": "Rabi", "reason": "Important oilseed"}
+    ]
+  },
+  "Maharashtra": {
+    "climate": "Tropical to semi-arid, variable rainfall",
+    "soil_types": ["Regur soil", "Black soil", "Laterite soil"],
+    "major_seasons": ["Kharif", "Rabi"],
+    "top_crops": [
+      {"name": "Cotton", "season": "Kharif", "reason": "Vidarbha cotton belt"},
+      {"name": "Sugarcane", "season": "All year", "reason": "Second largest producer"},
+      {"name": "Onion", "season": "Rabi", "reason": "Nashik onion hub"},
+      {"name": "Grapes", "season": "Rabi", "reason": "Nashik grapes, wine industry"},
+      {"name": "Pomegranate", "season": "Various", "reason": "Leading pomegranate state"},
+      {"name": "Soyabean", "season": "Kharif", "reason": "Major soya producer"}
+    ]
+  },
+  "Manipur": {
+    "climate": "Subtropical, moderate to heavy rainfall",
+    "soil_types": ["Alluvial soil", "Red soil"],
+    "major_seasons": ["Kharif", "Rabi"],
+    "top_crops": [
+      {"name": "Rice", "season": "Kharif", "reason": "Staple food crop"},
+      {"name": "Maize", "season": "Kharif", "reason": "Hill area cultivation"},
+      {"name": "Pulses", "season": "Rabi", "reason": "Various dal crops"},
+      {"name": "Vegetables", "season": "All year", "reason": "Diverse vegetable farming"},
+      {"name": "Ginger", "season": "Kharif", "reason": "Mountain spice"},
+      {"name": "Orange", "season": "Rabi", "reason": "Citrus fruit"}
+    ]
+  },
+  "Meghalaya": {
+    "climate": "Subtropical, very heavy rainfall, humid",
+    "soil_types": ["Laterite soil", "Red soil"],
+    "major_seasons": ["Kharif", "Rabi"],
+    "top_crops": [
+      {"name": "Rice", "season": "Kharif", "reason": "Main food crop"},
+      {"name": "Potato", "season": "Rabi", "reason": "Cool highland crop"},
+      {"name": "Pineapple", "season": "Summer", "reason": "Hill fruit production"},
+      {"name": "Ginger", "season": "Kharif", "reason": "Major ginger producer"},
+      {"name": "Orange", "season": "Rabi", "reason": "Khasi mandarin"},
+      {"name": "Turmeric", "season": "Kharif", "reason": "Spice crop in hills"}
+    ]
+  },
+  "Mizoram": {
+    "climate": "Tropical, heavy monsoon",
+    "soil_types": ["Red soil", "Laterite soil"],
+    "major_seasons": ["Kharif", "Rabi"],
+    "top_crops": [
+      {"name": "Rice", "season": "Kharif", "reason": "Jhum cultivation"},
+      {"name": "Maize", "season": "Kharif", "reason": "Hill cultivation"},
+      {"name": "Sugarcane", "season": "All year", "reason": "Valley crop"},
+      {"name": "Ginger", "season": "Kharif", "reason": "Hill spice"},
+      {"name": "Banana", "season": "All year", "reason": "Tropical fruit"},
+      {"name": "Vegetables", "season": "All year", "reason": "Diverse farming"}
+    ]
+  },
+  "Nagaland": {
+    "climate": "Subtropical, heavy rainfall",
+    "soil_types": ["Red soil", "Laterite soil"],
+    "major_seasons": ["Kharif", "Rabi"],
+    "top_crops": [
+      {"name": "Rice", "season": "Kharif", "reason": "Main staple crop"},
+      {"name": "Maize", "season": "Kharif", "reason": "Second major crop"},
+      {"name": "Millets", "season": "Kharif", "reason": "Traditional grain"},
+      {"name": "Potato", "season": "Rabi", "reason": "Highland vegetable"},
+      {"name": "Ginger", "season": "Kharif", "reason": "Quality spice"},
+      {"name": "Chilli", "season": "Kharif", "reason": "Naga King Chilli"}
+    ]
+  },
+  "Odisha": {
+    "climate": "Tropical, heavy monsoon",
+    "soil_types": ["Alluvial soil", "Red soil", "Laterite soil"],
+    "major_seasons": ["Kharif", "Rabi"],
+    "top_crops": [
+      {"name": "Rice", "season": "Kharif", "reason": "Major rice-producing state"},
+      {"name": "Jute", "season": "Kharif", "reason": "Fibre crop"},
+      {"name": "Pulses", "season": "Rabi", "reason": "Various pulses"},
+      {"name": "Groundnut", "season": "Kharif", "reason": "Oilseed crop"},
+      {"name": "Sugarcane", "season": "All year", "reason": "Cash crop"},
+      {"name": "Vegetables", "season": "Rabi", "reason": "Winter vegetables"}
+    ]
+  },
+  "Punjab": {
+    "climate": "Semi-arid, hot summers, cold winters",
+    "soil_types": ["Alluvial soil"],
+    "major_seasons": ["Kharif", "Rabi"],
+    "top_crops": [
+      {"name": "Wheat", "season": "Rabi", "reason": "Granary of India, top wheat state"},
+      {"name": "Rice", "season": "Kharif", "reason": "Major paddy producer"},
+      {"name": "Cotton", "season": "Kharif", "reason": "Punjab cotton belt"},
+      {"name": "Sugarcane", "season": "All year", "reason": "Irrigated cash crop"},
+      {"name": "Maize", "season": "Kharif", "reason": "Feed grain"},
+      {"name": "Potato", "season": "Rabi", "reason": "Winter vegetable"}
+    ]
+  },
+  "Rajasthan": {
+    "climate": "Arid to semi-arid, very low rainfall",
+    "soil_types": ["Desert soils", "Arid soil", "Sandy soil"],
+    "major_seasons": ["Kharif", "Rabi"],
+    "top_crops": [
+      {"name": "Bajra", "season": "Kharif", "reason": "Drought-resistant millet, top producer"},
+      {"name": "Mustard", "season": "Rabi", "reason": "Largest mustard producer"},
+      {"name": "Wheat", "season": "Rabi", "reason": "Irrigated Rabi crop"},
+      {"name": "Gram", "season": "Rabi", "reason": "Major pulse crop"},
+      {"name": "Cumin", "season": "Rabi", "reason": "Spice crop in Jodhpur region"},
+      {"name": "Guar", "season": "Kharif", "reason": "Largest guar producer"}
+    ]
+  },
+  "Sikkim": {
+    "climate": "Temperate to alpine, heavy rainfall",
+    "soil_types": ["Mountain soil", "Red soil"],
+    "major_seasons": ["Kharif", "Rabi"],
+    "top_crops": [
+      {"name": "Cardamom", "season": "All year", "reason": "Largest cardamom producer"},
+      {"name": "Rice", "season": "Kharif", "reason": "Terraced rice farming"},
+      {"name": "Maize", "season": "Kharif", "reason": "Hill cultivation"},
+      {"name": "Ginger", "season": "Kharif", "reason": "Organic ginger"},
+      {"name": "Orange", "season": "Rabi", "reason": "Sikkim mandarin"},
+      {"name": "Potato", "season": "Rabi", "reason": "Cool climate crop"}
+    ]
+  },
+  "Tamil Nadu": {
+    "climate": "Tropical, hot, NE monsoon dominant",
+    "soil_types": ["Red soil", "Black soil", "Alluvial soil"],
+    "major_seasons": ["Kharif", "Rabi"],
+    "top_crops": [
+      {"name": "Rice", "season": "Kharif/Rabi", "reason": "Thanjavur rice bowl"},
+      {"name": "Sugarcane", "season": "All year", "reason": "Major cash crop"},
+      {"name": "Cotton", "season": "Kharif", "reason": "Southern cotton belt"},
+      {"name": "Coconut", "season": "All year", "reason": "Major coconut producer"},
+      {"name": "Banana", "season": "All year", "reason": "Year-round production"},
+      {"name": "Groundnut", "season": "Kharif", "reason": "Oilseed crop"}
+    ]
+  },
+  "Telangana": {
+    "climate": "Tropical semi-arid, moderate rainfall",
+    "soil_types": ["Red soil", "Black soil"],
+    "major_seasons": ["Kharif", "Rabi"],
+    "top_crops": [
+      {"name": "Rice", "season": "Kharif", "reason": "Major food grain"},
+      {"name": "Cotton", "season": "Kharif", "reason": "Cash crop in black soil"},
+      {"name": "Maize", "season": "Kharif", "reason": "Growing importance"},
+      {"name": "Chillies", "season": "Kharif", "reason": "Warangal chilli market"},
+      {"name": "Turmeric", "season": "Kharif", "reason": "Nizamabad turmeric"},
+      {"name": "Sugarcane", "season": "All year", "reason": "Irrigated areas"}
+    ]
+  },
+  "Tripura": {
+    "climate": "Tropical, heavy monsoon",
+    "soil_types": ["Alluvial soil", "Laterite soil"],
+    "major_seasons": ["Kharif", "Rabi"],
+    "top_crops": [
+      {"name": "Rice", "season": "Kharif", "reason": "Staple food crop"},
+      {"name": "Rubber", "season": "All year", "reason": "Major plantation"},
+      {"name": "Tea", "season": "All year", "reason": "Growing tea industry"},
+      {"name": "Jute", "season": "Kharif", "reason": "Fibre crop"},
+      {"name": "Potato", "season": "Rabi", "reason": "Winter vegetable"},
+      {"name": "Pineapple", "season": "Summer", "reason": "Queen pineapple variety"}
+    ]
+  },
+  "Uttar Pradesh": {
+    "climate": "Subtropical, wide temperature range, moderate rainfall",
+    "soil_types": ["Alluvial soil", "Sandy loam"],
+    "major_seasons": ["Kharif", "Rabi"],
+    "top_crops": [
+      {"name": "Wheat", "season": "Rabi", "reason": "Largest wheat producer in India"},
+      {"name": "Sugarcane", "season": "All year", "reason": "Largest sugarcane producer, 50% of India"},
+      {"name": "Rice", "season": "Kharif", "reason": "Major paddy producer"},
+      {"name": "Potato", "season": "Rabi", "reason": "Largest potato producer"},
+      {"name": "Maize", "season": "Kharif", "reason": "Important food grain"},
+      {"name": "Mustard", "season": "Rabi", "reason": "Major oilseed crop"}
+    ]
+  },
+  "Uttrakhand": {
+    "climate": "Temperate to cold, moderate to heavy rainfall",
+    "soil_types": ["Mountain soil", "Sandy loam", "Alluvial soil"],
+    "major_seasons": ["Kharif", "Rabi"],
+    "top_crops": [
+      {"name": "Rice", "season": "Kharif", "reason": "Basmati rice in Dehradun"},
+      {"name": "Wheat", "season": "Rabi", "reason": "Major Rabi cereal"},
+      {"name": "Apple", "season": "Summer", "reason": "Hill fruit cultivation"},
+      {"name": "Potato", "season": "Rabi", "reason": "Cool climate vegetable"},
+      {"name": "Ginger", "season": "Kharif", "reason": "Mountain spice"},
+      {"name": "Soyabean", "season": "Kharif", "reason": "Hill oilseed"}
+    ]
+  },
+  "West Bengal": {
+    "climate": "Tropical to subtropical, heavy monsoon",
+    "soil_types": ["Alluvial soil", "Laterite soil"],
+    "major_seasons": ["Kharif", "Rabi"],
+    "top_crops": [
+      {"name": "Rice", "season": "Kharif/Rabi", "reason": "Largest rice producer in India"},
+      {"name": "Jute", "season": "Kharif", "reason": "Golden fibre, top jute producer"},
+      {"name": "Tea", "season": "All year", "reason": "Darjeeling and Dooars tea"},
+      {"name": "Potato", "season": "Rabi", "reason": "Major vegetable producer"},
+      {"name": "Wheat", "season": "Rabi", "reason": "Winter cereal"},
+      {"name": "Mustard", "season": "Rabi", "reason": "Oilseed crop"}
+    ]
+  }
+}
